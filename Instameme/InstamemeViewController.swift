@@ -35,20 +35,39 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
         // Setup Memes
+        setupMemeView()
+        
+            }
+    
+    // Setup Empty State
+    func setupMemeView() {
+        // setup text attributes
         topTextField.defaultTextAttributes = textFieldDelegate.textAttributes
         bottomTextField.defaultTextAttributes = textFieldDelegate.textAttributes
         topTextField.textAlignment = .center
+        bottomTextField.textAlignment = .center
+        
+        // setup initial states
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
-        bottomTextField.textAlignment = .center
+        memeImageView.image = nil
+        
+        // set delegates
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
+
     }
     
-    func save() {
+
+    @IBAction func save(_ sender: Any) {
         // Create the meme
         self.meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
     }
+    
+    @IBAction func cancel(_ sender: Any) {
+        setupMemeView()
+    }
+
     
     func generateMemedImage() -> UIImage {
         
