@@ -42,7 +42,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-5i-zCz" userLabel="Bottom Stack View">
                                 <rect key="frame" x="16" y="507" width="343" height="160"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u31-D2-96Z" userLabel="Bottom Text Field">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u31-D2-96Z" userLabel="Bottom Text Field">
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="gyG-aj-eKx"/>
@@ -54,16 +54,19 @@
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91u-ob-Irb" userLabel="Picker Toolbar">
                                         <rect key="frame" x="0.0" y="110" width="343" height="50"/>
                                         <items>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="tbj-Z4-YUl"/>
                                             <barButtonItem style="plain" systemItem="camera" id="Vy5-ma-xPd" userLabel="Camera">
                                                 <connections>
                                                     <action selector="pickFromCamera:" destination="BYZ-38-t0r" id="jJ9-LP-g1j"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="PFQ-8J-Aix"/>
                                             <barButtonItem title="Photos" style="plain" id="Kg6-4G-86x" userLabel="Library">
                                                 <connections>
                                                     <action selector="pickFromLibrary:" destination="BYZ-38-t0r" id="Wsn-Gd-63U"/>
                                                 </connections>
                                             </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="ZHT-Pr-QEg"/>
                                         </items>
                                     </toolbar>
                                 </subviews>

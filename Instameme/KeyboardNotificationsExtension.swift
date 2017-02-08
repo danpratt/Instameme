@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+    var isViewMovedUp = false
+
 // Using extension to prevent ViewController from getting too messy
 extension InstamemeViewController {
     
@@ -16,6 +18,7 @@ extension InstamemeViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         subscribeToKeyboardNotifications()
+        
     }
     
     // Turn off notifications when keyboard will disappear
@@ -26,18 +29,19 @@ extension InstamemeViewController {
     
     // Called when the keyboard is about to show up, moves view up so it isn't covered up by the keyboard
     func keyboardWillShow(_ notification: Notification) {
-        if UIDevice.current.orientation == .portrait {
+        print(notification)
+        if !isViewMovedUp && bottomTextField.isFirstResponder {
             self.view.frame.origin.y -= getKeyboardHeight(notification)
+            isViewMovedUp = true
         }
-        
     }
     
     // Moves view back down when keyboard will go away
     func keyboardWillHide(_ notifcation: Notification) {
-        if UIDevice.current.orientation == .portrait {
+        if isViewMovedUp && bottomTextField.isFirstResponder {
             self.view.frame.origin.y += getKeyboardHeight(notifcation)
+            isViewMovedUp = false
         }
-        
     }
     
     // Gets keyboard height so we know how far to move the view

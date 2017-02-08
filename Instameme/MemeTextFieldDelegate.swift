@@ -28,4 +28,5 @@ class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
         textField.resignFirstResponder()
         return true
     }
+
 }
