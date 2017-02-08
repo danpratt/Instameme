@@ -31,7 +31,7 @@ extension InstamemeViewController {
     func keyboardWillShow(_ notification: Notification) {
         print(notification)
         if !isViewMovedUp && bottomTextField.isFirstResponder {
-            self.view.frame.origin.y -= getKeyboardHeight(notification)
+            self.view.frame.origin.y = getKeyboardHeight(notification) * -1
             isViewMovedUp = true
         }
     }
@@ -39,8 +39,8 @@ extension InstamemeViewController {
     // Moves view back down when keyboard will go away
     func keyboardWillHide(_ notifcation: Notification) {
         if isViewMovedUp && bottomTextField.isFirstResponder {
-            self.view.frame.origin.y += getKeyboardHeight(notifcation)
-            isViewMovedUp = false
+            self.view.frame.origin.y = 0
+                isViewMovedUp = false
         }
     }
     
