@@ -14,8 +14,10 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
-    // Picker toolbar
+    // Navigation Toolbars
     @IBOutlet weak var pickerToolbar: UIToolbar!
+    @IBOutlet weak var memeShareCancelBar: UINavigationBar!
+    @IBOutlet weak var shareButton: UIBarButtonItem!
     
     // Image View
     @IBOutlet weak var memeImageView: UIImageView!
@@ -37,6 +39,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         // Setup Memes
         setupMemeView()
         
+        
             }
     
     // Setup Empty State
@@ -51,6 +54,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         topTextField.text = "TOP"
         bottomTextField.text = "BOTTOM"
         memeImageView.image = nil
+        shareButton.isEnabled = false
         
         // set delegates
         topTextField.delegate = textFieldDelegate
@@ -62,6 +66,11 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func save(_ sender: Any) {
         // Create the meme
         self.meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+        
+        let activityViewController = UIActivityViewController(activityItems: [(meme?.memedImage)! as UIImage], applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = self.view
+        present(activityViewController, animated: true, completion: nil)
+        
     }
     
     @IBAction func cancel(_ sender: Any) {
@@ -71,16 +80,19 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     func generateMemedImage() -> UIImage {
         
-        // TODO: Hide toolbar and navbar
+        // Hide toolbar and navbar
         self.pickerToolbar.isHidden = true
+        self.memeShareCancelBar.isHidden = true
+        
         // Render view to an image
         UIGraphicsBeginImageContext(self.view.frame.size)
         view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        // TODO: Show toolbar and navbar
+        // Show toolbar and navbar again
         self.pickerToolbar.isHidden = false
+        self.memeShareCancelBar.isHidden = false
         
         return memedImage
     }

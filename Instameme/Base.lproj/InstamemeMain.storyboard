@@ -22,10 +22,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="249" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="2Zg-Kv-Vvf" userLabel="Meme Image View">
-                                <rect key="frame" x="16" y="20" width="343" height="597"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="2Zg-Kv-Vvf" userLabel="Meme Image View">
+                                <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-5i-zCz" userLabel="Bottom Stack View">
+                            <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" spacing="55" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-5i-zCz" userLabel="Bottom Stack View">
                                 <rect key="frame" x="-2" y="518" width="379" height="149"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u31-D2-96Z" userLabel="Bottom Text Field">
@@ -35,7 +35,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91u-ob-Irb" userLabel="Picker Toolbar">
                                         <rect key="frame" x="0.0" y="105" width="379" height="44"/>
@@ -79,14 +79,14 @@
                                             </navigationItem>
                                         </items>
                                     </navigationBar>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="maF-JT-sWe" userLabel="Top Text Field">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="maF-JT-sWe" userLabel="Top Text Field">
                                         <rect key="frame" x="0.0" y="64" width="379" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Hbw-WP-Yzb"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -95,7 +95,7 @@
                         <constraints>
                             <constraint firstItem="z6r-5i-zCz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-18" id="0kX-TJ-eyt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Zg-Kv-Vvf" secondAttribute="trailing" id="AeX-Yf-xu1"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Zg-Kv-Vvf" secondAttribute="bottom" constant="50" id="Cmu-ub-rUk"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="2Zg-Kv-Vvf" secondAttribute="bottom" id="Cmu-ub-rUk"/>
                             <constraint firstAttribute="trailingMargin" secondItem="z6r-5i-zCz" secondAttribute="trailing" constant="-18" id="WBb-aD-92f"/>
                             <constraint firstItem="xrq-Xf-6oq" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="dkA-eC-HOh"/>
                             <constraint firstItem="2Zg-Kv-Vvf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="j03-dR-sP4"/>
@@ -109,7 +109,9 @@
                         <outlet property="bottomTextField" destination="u31-D2-96Z" id="Yzi-FH-gnb"/>
                         <outlet property="cameraButton" destination="Vy5-ma-xPd" id="xnh-PP-lIf"/>
                         <outlet property="memeImageView" destination="2Zg-Kv-Vvf" id="ofJ-cO-vzY"/>
+                        <outlet property="memeShareCancelBar" destination="uBW-kv-CTw" id="HdC-EJ-9n9"/>
                         <outlet property="pickerToolbar" destination="91u-ob-Irb" id="2SV-mE-W9C"/>
+                        <outlet property="shareButton" destination="mWE-nM-g2V" id="S1E-37-PgW"/>
                         <outlet property="topTextField" destination="maF-JT-sWe" id="Uzz-iW-rQK"/>
                     </connections>
                 </viewController>
