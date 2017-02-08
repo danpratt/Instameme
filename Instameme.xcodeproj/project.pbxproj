@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65AB01741E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */; };
+		65AB01761E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */; };
+		65AB01781E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */; };
 		65C914641E4AA6B000A11655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914631E4AA6B000A11655 /* AppDelegate.swift */; };
 		65C914661E4AA6B000A11655 /* InstamemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914651E4AA6B000A11655 /* InstamemeViewController.swift */; };
-		65C914691E4AA6B000A11655 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C914671E4AA6B000A11655 /* Main.storyboard */; };
+		65C914691E4AA6B000A11655 /* InstamemeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */; };
 		65C9146B1E4AA6B000A11655 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65C9146A1E4AA6B000A11655 /* Assets.xcassets */; };
 		65C9146E1E4AA6B000A11655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */; };
 		65C914791E4AA6B000A11655 /* InstamemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914781E4AA6B000A11655 /* InstamemeTests.swift */; };
@@ -34,10 +37,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
+		65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsExtension.swift; sourceTree = "<group>"; };
+		65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstamemeImagePickerDelegate.swift; sourceTree = "<group>"; };
 		65C914601E4AA6B000A11655 /* Instameme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instameme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C914631E4AA6B000A11655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C914651E4AA6B000A11655 /* InstamemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamemeViewController.swift; sourceTree = "<group>"; };
-		65C914681E4AA6B000A11655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		65C914681E4AA6B000A11655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/InstamemeMain.storyboard; sourceTree = "<group>"; };
 		65C9146A1E4AA6B000A11655 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65C9146D1E4AA6B000A11655 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		65C9146F1E4AA6B000A11655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,7 +105,10 @@
 			children = (
 				65C914631E4AA6B000A11655 /* AppDelegate.swift */,
 				65C914651E4AA6B000A11655 /* InstamemeViewController.swift */,
-				65C914671E4AA6B000A11655 /* Main.storyboard */,
+				65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */,
+				65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */,
+				65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */,
+				65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */,
 				65C9146A1E4AA6B000A11655 /* Assets.xcassets */,
 				65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */,
 				65C9146F1E4AA6B000A11655 /* Info.plist */,
@@ -237,7 +246,7 @@
 			files = (
 				65C9146E1E4AA6B000A11655 /* LaunchScreen.storyboard in Resources */,
 				65C9146B1E4AA6B000A11655 /* Assets.xcassets in Resources */,
-				65C914691E4AA6B000A11655 /* Main.storyboard in Resources */,
+				65C914691E4AA6B000A11655 /* InstamemeMain.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,7 +272,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				65C914661E4AA6B000A11655 /* InstamemeViewController.swift in Sources */,
+				65AB01781E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift in Sources */,
+				65AB01741E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift in Sources */,
 				65C914641E4AA6B000A11655 /* AppDelegate.swift in Sources */,
+				65AB01761E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,12 +311,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		65C914671E4AA6B000A11655 /* Main.storyboard */ = {
+		65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				65C914681E4AA6B000A11655 /* Base */,
 			);
-			name = Main.storyboard;
+			name = InstamemeMain.storyboard;
 			sourceTree = "<group>";
 		};
 		65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */ = {
@@ -514,6 +526,7 @@
 				65C9148A1E4AA6B000A11655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C9148B1E4AA6B000A11655 /* Build configuration list for PBXNativeTarget "InstamemeTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +535,7 @@
 				65C9148D1E4AA6B000A11655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		65C9148E1E4AA6B000A11655 /* Build configuration list for PBXNativeTarget "InstamemeUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,6 +544,7 @@
 				65C914901E4AA6B000A11655 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
