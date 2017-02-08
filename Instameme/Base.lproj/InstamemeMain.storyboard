@@ -35,7 +35,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                 </subviews>
                             </stackView>
@@ -49,7 +49,7 @@
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" returnKeyType="done"/>
                                     </textField>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91u-ob-Irb" userLabel="Picker Toolbar">
                                         <rect key="frame" x="0.0" y="110" width="343" height="50"/>
@@ -87,6 +87,7 @@
                         <outlet property="bottomTextField" destination="u31-D2-96Z" id="Yzi-FH-gnb"/>
                         <outlet property="cameraButton" destination="Vy5-ma-xPd" id="xnh-PP-lIf"/>
                         <outlet property="memeImageView" destination="2Zg-Kv-Vvf" id="ofJ-cO-vzY"/>
+                        <outlet property="pickerToolbar" destination="91u-ob-Irb" id="2SV-mE-W9C"/>
                         <outlet property="topTextField" destination="maF-JT-sWe" id="Uzz-iW-rQK"/>
                     </connections>
                 </viewController>

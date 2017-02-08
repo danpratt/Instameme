@@ -10,6 +10,7 @@
 		65AB01741E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */; };
 		65AB01761E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */; };
 		65AB01781E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */; };
+		65AB017A1E4ACA5500C5BD71 /* Meme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65AB01791E4ACA5500C5BD71 /* Meme.swift */; };
 		65C914641E4AA6B000A11655 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914631E4AA6B000A11655 /* AppDelegate.swift */; };
 		65C914661E4AA6B000A11655 /* InstamemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914651E4AA6B000A11655 /* InstamemeViewController.swift */; };
 		65C914691E4AA6B000A11655 /* InstamemeMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */; };
@@ -40,6 +41,7 @@
 		65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemeTextFieldDelegate.swift; sourceTree = "<group>"; };
 		65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardNotificationsExtension.swift; sourceTree = "<group>"; };
 		65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstamemeImagePickerDelegate.swift; sourceTree = "<group>"; };
+		65AB01791E4ACA5500C5BD71 /* Meme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meme.swift; sourceTree = "<group>"; };
 		65C914601E4AA6B000A11655 /* Instameme.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Instameme.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C914631E4AA6B000A11655 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		65C914651E4AA6B000A11655 /* InstamemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamemeViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		65AB017B1E4ACC3700C5BD71 /* Delegates and Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */,
+				65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */,
+				65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */,
+			);
+			name = "Delegates and Extensions";
+			sourceTree = "<group>";
+		};
+		65AB017C1E4ACC4A00C5BD71 /* Views and Conrollers */ = {
+			isa = PBXGroup;
+			children = (
+				65C914651E4AA6B000A11655 /* InstamemeViewController.swift */,
+				65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */,
+			);
+			name = "Views and Conrollers";
+			sourceTree = "<group>";
+		};
+		65AB017D1E4ACC5400C5BD71 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				65AB01791E4ACA5500C5BD71 /* Meme.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		65C914571E4AA6B000A11655 = {
 			isa = PBXGroup;
 			children = (
@@ -104,11 +133,9 @@
 			isa = PBXGroup;
 			children = (
 				65C914631E4AA6B000A11655 /* AppDelegate.swift */,
-				65C914651E4AA6B000A11655 /* InstamemeViewController.swift */,
-				65AB01771E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift */,
-				65AB01751E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift */,
-				65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */,
-				65AB01731E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift */,
+				65AB017C1E4ACC4A00C5BD71 /* Views and Conrollers */,
+				65AB017B1E4ACC3700C5BD71 /* Delegates and Extensions */,
+				65AB017D1E4ACC5400C5BD71 /* Model */,
 				65C9146A1E4AA6B000A11655 /* Assets.xcassets */,
 				65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */,
 				65C9146F1E4AA6B000A11655 /* Info.plist */,
@@ -274,6 +301,7 @@
 				65C914661E4AA6B000A11655 /* InstamemeViewController.swift in Sources */,
 				65AB01781E4AC26800C5BD71 /* InstamemeImagePickerDelegate.swift in Sources */,
 				65AB01741E4ABBC700C5BD71 /* MemeTextFieldDelegate.swift in Sources */,
+				65AB017A1E4ACA5500C5BD71 /* Meme.swift in Sources */,
 				65C914641E4AA6B000A11655 /* AppDelegate.swift in Sources */,
 				65AB01761E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift in Sources */,
 			);
