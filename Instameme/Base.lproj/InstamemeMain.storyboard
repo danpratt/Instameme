@@ -26,19 +26,19 @@
                                 <rect key="frame" x="16" y="20" width="343" height="647"/>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="z6r-5i-zCz" userLabel="Bottom Stack View">
-                                <rect key="frame" x="-2" y="553" width="379" height="114"/>
+                                <rect key="frame" x="-2" y="543" width="379" height="124"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u31-D2-96Z" userLabel="Bottom Text Field">
-                                        <rect key="frame" x="0.0" y="0.0" width="379" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="379" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="gyG-aj-eKx"/>
+                                            <constraint firstAttribute="height" constant="60" id="gyG-aj-eKx"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="allCharacters" autocorrectionType="no" spellCheckingType="no" returnKeyType="done"/>
                                     </textField>
                                     <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="91u-ob-Irb" userLabel="Picker Toolbar">
-                                        <rect key="frame" x="0.0" y="70" width="379" height="44"/>
+                                        <rect key="frame" x="0.0" y="80" width="379" height="44"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <items>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="tbj-Z4-YUl"/>
@@ -54,12 +54,18 @@
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ZHT-Pr-QEg"/>
+                                            <barButtonItem systemItem="edit" id="zCJ-ND-c7P">
+                                                <connections>
+                                                    <segue destination="KTB-ax-vEG" kind="show" identifier="OpenSettings" id="nIW-2X-Nfm"/>
+                                                </connections>
+                                            </barButtonItem>
+                                            <barButtonItem style="plain" systemItem="flexibleSpace" id="mzE-Ue-VSd"/>
                                         </items>
                                     </toolbar>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="xrq-Xf-6oq" userLabel="Top Stack View">
-                                <rect key="frame" x="-2" y="20" width="379" height="114"/>
+                                <rect key="frame" x="-2" y="20" width="379" height="124"/>
                                 <subviews>
                                     <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uBW-kv-CTw" userLabel="Top Navigation Bar">
                                         <rect key="frame" x="0.0" y="0.0" width="379" height="44"/>
@@ -71,7 +77,7 @@
                                                         <action selector="save:" destination="BYZ-38-t0r" id="zQV-i0-lJu"/>
                                                     </connections>
                                                 </barButtonItem>
-                                                <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="Osi-f2-TXj" userLabel="Cancel">
+                                                <barButtonItem key="rightBarButtonItem" systemItem="trash" id="Osi-f2-TXj" userLabel="Cancel">
                                                     <connections>
                                                         <action selector="cancel:" destination="BYZ-38-t0r" id="LDt-s7-AIr"/>
                                                     </connections>
@@ -80,9 +86,9 @@
                                         </items>
                                     </navigationBar>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="749" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="maF-JT-sWe" userLabel="Top Text Field">
-                                        <rect key="frame" x="0.0" y="64" width="379" height="50"/>
+                                        <rect key="frame" x="0.0" y="64" width="379" height="60"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="Hbw-WP-Yzb"/>
+                                            <constraint firstAttribute="height" constant="60" id="Hbw-WP-Yzb"/>
                                         </constraints>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -119,5 +125,75 @@
             </objects>
             <point key="canvasLocation" x="32.799999999999997" y="38.23088455772114"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="dJk-zm-MfG">
+            <objects>
+                <viewController id="KTB-ax-vEG" customClass="SettingsViewController" customModule="Instameme" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qlB-17-hym"/>
+                        <viewControllerLayoutGuide type="bottom" id="vmC-yf-i1d"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LjB-UE-GXg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0O1-CL-iZd" userLabel="Font Stack View">
+                                <rect key="frame" x="16" y="28" width="343" height="56.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-n4-kht">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="94w-4M-uk3">
+                                        <rect key="frame" x="0.0" y="28.5" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="Impact"/>
+                                            <segment title="Helvetica"/>
+                                            <segment title="Jedi"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="fontValueChanged:" destination="KTB-ax-vEG" eventType="valueChanged" id="3Oj-bI-pe6"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SQF-vY-fpf">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem systemItem="done" id="X7H-pq-14a">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="SaveSettings" id="224-8i-Kvk"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="jb7-JE-IDH"/>
+                                    <barButtonItem systemItem="cancel" id="Dyp-LS-EWM">
+                                        <connections>
+                                            <segue destination="BYZ-38-t0r" kind="show" identifier="CancelSettings" id="JF1-lL-6Or"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0O1-CL-iZd" firstAttribute="top" secondItem="qlB-17-hym" secondAttribute="bottom" constant="8" symbolic="YES" id="BW3-VL-2UG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0O1-CL-iZd" secondAttribute="trailing" id="Bqr-Rr-Vs1"/>
+                            <constraint firstItem="0O1-CL-iZd" firstAttribute="leading" secondItem="LjB-UE-GXg" secondAttribute="leadingMargin" id="YUb-7G-4VN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="fontSelection" destination="94w-4M-uk3" id="LJs-Nd-2oj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Wxt-OW-LNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="903" y="18"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="JF1-lL-6Or"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -11,13 +11,6 @@ import UIKit
 
 class MemeTextFieldDelegate: NSObject, UITextFieldDelegate {
     
-    let textAttributes: [String: Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSFontAttributeName: UIFont(name: "HelveticaNeue-CondensedBlack", size: 40)!,
-        NSStrokeWidthAttributeName: -3.0,
-        ]
-    
     func textFieldDidBeginEditing(_ textField: UITextField) {
         if textField.text == "TOP" || textField.text == "BOTTOM" {
             textField.text = ""

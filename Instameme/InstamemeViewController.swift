@@ -31,13 +31,13 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Meme
     var meme: Meme?
     
+    // Settings
+    var settings = Settings()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
-        // Setup background
-         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
         
         // Setup Memes
         setupMemeView()
@@ -48,8 +48,10 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Setup Empty State
     func setupMemeView() {
         // setup text attributes
-        topTextField.defaultTextAttributes = textFieldDelegate.textAttributes
-        bottomTextField.defaultTextAttributes = textFieldDelegate.textAttributes
+        topTextField.defaultTextAttributes = self.settings.textAttributes
+        bottomTextField.defaultTextAttributes = self.settings.textAttributes
+        topTextField.font = settings.font
+        bottomTextField.font = settings.font
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
         
@@ -62,7 +64,15 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         // set delegates
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
+        
+        for font in UIFont.familyNames {
+            print(font)
+        }
 
+    }
+    
+    func updateTextSettings() {
+        print(settings.font)
     }
     
 
@@ -113,6 +123,14 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    // Prepare to view settings
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "OpenSettings" {
+            let settingsController = segue.destination as! SettingsViewController
+            settingsController.currentSettings = self.settings
+        }
     }
 }
 
