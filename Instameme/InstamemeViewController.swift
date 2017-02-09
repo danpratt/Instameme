@@ -36,6 +36,9 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         
+        // Setup background
+         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Background")!)
+        
         // Setup Memes
         setupMemeView()
         
@@ -66,6 +69,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     @IBAction func save(_ sender: Any) {
         // Create the meme
         self.meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+        
         
         let activityViewController = UIActivityViewController(activityItems: [(meme?.memedImage)! as UIImage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view

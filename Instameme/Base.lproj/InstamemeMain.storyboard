@@ -91,7 +91,7 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="z6r-5i-zCz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-18" id="0kX-TJ-eyt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2Zg-Kv-Vvf" secondAttribute="trailing" id="AeX-Yf-xu1"/>

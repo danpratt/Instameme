@@ -55,7 +55,6 @@
 		65C9147F1E4AA6B000A11655 /* InstamemeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstamemeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C914831E4AA6B000A11655 /* InstamemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamemeUITests.swift; sourceTree = "<group>"; };
 		65C914851E4AA6B000A11655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		65F78A5B1E4BC05A00E5546D /* impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = impact.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,7 +137,6 @@
 				65AB017B1E4ACC3700C5BD71 /* Delegates and Extensions */,
 				65AB017D1E4ACC5400C5BD71 /* Model */,
 				65C9146A1E4AA6B000A11655 /* Assets.xcassets */,
-				65F78A5B1E4BC05A00E5546D /* impact.ttf */,
 				65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */,
 				65C9146F1E4AA6B000A11655 /* Info.plist */,
 			);
