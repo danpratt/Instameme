@@ -36,23 +36,20 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Settings
     var settings = Settings()
-    var settingsDidUpdate = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("View did load, current values: ")
-        print("Current Settings: \(settings)")
-        print("Settings changed: \(settingsDidUpdate)")
-        print("Top TextField contents: \(topTextField.text)")
-        print("Bottom TextField contents: \(bottomTextField.text)")
+        
+        // Print list of fonts
+        for font in UIFont.familyNames {
+            print(font)
+        }
+
+
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-        
-        // Setup Memes
-//        if !settingsDidUpdate {
-//            print("setting up meme view")
-//            setupMemeView()
-//        }
+
+        // Setup Memes by calling function
         setupMemeView()
         
     }
@@ -67,7 +64,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
         
-        print("Setting up initial text")
         // setup initial states
         topTextField.text = self.topText
         bottomTextField.text = self.bottomText
@@ -79,10 +75,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         topTextField.delegate = textFieldDelegate
         bottomTextField.delegate = textFieldDelegate
         
-//        for font in UIFont.familyNames {
-//            print(font)
-//        }
-
     }
 
     @IBAction func save(_ sender: Any) {
@@ -96,9 +88,9 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel(_ sender: Any) {
-//        topTextField.text = ""
-//        bottomTextField.text = ""
-        settingsDidUpdate = false
+        topTextField.text = "TOP"
+        bottomTextField.text = "BOTTOM"
+        memeImageView.image = nil
         setupMemeView()
     }
 
@@ -139,7 +131,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Prepare to view settings
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OpenSettings" {
-            print("Preparing segue")
             topText = topTextField.text ?? "TOP"
             bottomText = bottomTextField.text ?? "BOTTOM"
             memeImage = memeImageView.image

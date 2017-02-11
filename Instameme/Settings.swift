@@ -23,8 +23,8 @@ struct Settings {
     // Fonts
     enum Fonts: String {
         case impact = "Impact"
-        case helvetica = "HelveticaNeue-CondensedBlack"
-        case jedi = "Papyrus"
+        case fun = "Party LET"
+        case jedi = "Death Star"
     }
     
     mutating func setFont(_ fontName: Fonts.RawValue, fontSize: CGFloat) {

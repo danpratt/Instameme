@@ -32,11 +32,11 @@ class SettingsViewController: UIViewController {
         case 0:
             newSettings.font = UIFont(name: Settings.Fonts.impact.rawValue, size: 40.0)!
         case 1:
-            newSettings.font = UIFont(name: Settings.Fonts.helvetica.rawValue, size: 40.0)!
+            newSettings.font = UIFont(name: Settings.Fonts.fun.rawValue, size: 40.0)!
         case 2:
             newSettings.font = UIFont(name: Settings.Fonts.jedi.rawValue, size: 40.0)!
         default:
-            print("What?")
+            print("This shouldn't happen")
         }
     }
     

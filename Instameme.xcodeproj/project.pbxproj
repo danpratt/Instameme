@@ -21,6 +21,7 @@
 		65C9146E1E4AA6B000A11655 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 65C9146C1E4AA6B000A11655 /* LaunchScreen.storyboard */; };
 		65C914791E4AA6B000A11655 /* InstamemeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914781E4AA6B000A11655 /* InstamemeTests.swift */; };
 		65C914841E4AA6B000A11655 /* InstamemeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C914831E4AA6B000A11655 /* InstamemeUITests.swift */; };
+		65E340A81E4FD5C100C8EA28 /* Death Star.otf in Resources */ = {isa = PBXBuildFile; fileRef = 65E340A71E4FD59300C8EA28 /* Death Star.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		65C9147F1E4AA6B000A11655 /* InstamemeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstamemeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		65C914831E4AA6B000A11655 /* InstamemeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstamemeUITests.swift; sourceTree = "<group>"; };
 		65C914851E4AA6B000A11655 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65E340A71E4FD59300C8EA28 /* Death Star.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Death Star.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				657DAAC71E4D04C100B5F259 /* Impact.ttf */,
+				65E340A71E4FD59300C8EA28 /* Death Star.otf */,
 			);
 			name = "Custom Fonts";
 			sourceTree = "<group>";
@@ -288,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65E340A81E4FD5C100C8EA28 /* Death Star.otf in Resources */,
 				657DAAC91E4D067900B5F259 /* Impact.ttf in Resources */,
 				65C9146E1E4AA6B000A11655 /* LaunchScreen.storyboard in Resources */,
 				65C9146B1E4AA6B000A11655 /* Assets.xcassets in Resources */,
