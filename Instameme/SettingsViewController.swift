@@ -12,6 +12,9 @@ class SettingsViewController: UIViewController {
 
     var currentSettings: Settings!
     var newSettings: Settings!
+    var topText: String!
+    var bottomText: String!
+    var image: UIImage?
     
     // Font selection
     @IBOutlet weak var fontSelection: UISegmentedControl!
@@ -19,7 +22,6 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        print(currentSettings.font.fontName)
     }
     
     
@@ -43,7 +45,9 @@ class SettingsViewController: UIViewController {
             fontValueChanged(self)
             let memeVC = segue.destination as! InstamemeViewController
             memeVC.settings = newSettings!
-            memeVC.updateTextSettings()
+            memeVC.topText = self.topText
+            memeVC.bottomText = self.bottomText
+            memeVC.memeImage = self.image
         }
     }
 }
