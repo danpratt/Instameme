@@ -23,7 +23,7 @@ struct Settings {
     // Fonts
     enum Fonts: String {
         case impact = "Impact"
-        case fun = "Party LET"
+        case fun = "PartyLetPlain"
         case jedi = "Death Star"
     }
     

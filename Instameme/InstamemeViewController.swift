@@ -33,17 +33,19 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     var memeImage: UIImage? = nil
     var topText = "TOP"
     var bottomText = "BOTTOM"
+    var backgroundColor: UIColor?
     
     // Settings
     var settings = Settings()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.backgroundColor = self.view.backgroundColor
         
-        // Print list of fonts
-        for font in UIFont.familyNames {
-            print(font)
-        }
+//        // Print list of fonts
+//        for font in UIFont.familyNames {
+//            print(font)
+//        }
 
 
         // Disable the camera button if user doesn't have one
@@ -88,9 +90,11 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func cancel(_ sender: Any) {
-        topTextField.text = "TOP"
-        bottomTextField.text = "BOTTOM"
-        memeImageView.image = nil
+        // Reseting doesn't update font choice
+        // Might change this later
+        topText = "TOP"
+        bottomText = "BOTTOM"
+        memeImage = nil
         setupMemeView()
     }
 

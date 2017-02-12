@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Impact.ttf">
+            <string>Impact</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Instameme View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -140,21 +145,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="0O1-CL-iZd" userLabel="Font Stack View">
-                                <rect key="frame" x="16" y="28" width="343" height="56.5"/>
+                                <rect key="frame" x="16" y="28" width="343" height="86"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select Font" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgD-n4-kht">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="20.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7vf-cU-lok"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="94w-4M-uk3">
-                                        <rect key="frame" x="0.0" y="28.5" width="343" height="29"/>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="94w-4M-uk3" userLabel="Font Select">
+                                        <rect key="frame" x="0.0" y="58" width="343" height="29"/>
                                         <segments>
                                             <segment title="Impact"/>
                                             <segment title="Fun"/>
                                             <segment title="Jedi"/>
                                         </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <connections>
                                             <action selector="fontValueChanged:" destination="KTB-ax-vEG" eventType="valueChanged" id="3Oj-bI-pe6"/>
                                         </connections>
@@ -165,21 +174,41 @@
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem systemItem="done" id="X7H-pq-14a">
+                                    <barButtonItem tag="1" systemItem="done" id="X7H-pq-14a">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="SaveSettings" id="224-8i-Kvk"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jb7-JE-IDH"/>
-                                    <barButtonItem systemItem="cancel" id="Dyp-LS-EWM">
+                                    <barButtonItem tag="2" systemItem="cancel" id="Dyp-LS-EWM">
                                         <connections>
                                             <segue destination="BYZ-38-t0r" kind="show" identifier="CancelSettings" id="JF1-lL-6Or"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
                             </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvg-A3-CSf">
+                                <rect key="frame" x="40" y="157" width="295" height="49"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Dd-C8-p1x" userLabel="BackgroundColor">
+                                <rect key="frame" x="16" y="214" width="343" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <segments>
+                                    <segment title="Blue"/>
+                                    <segment title="Black"/>
+                                    <segment title="White"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="backgroundColorChanged:" destination="KTB-ax-vEG" eventType="valueChanged" id="Ui0-Gr-YcA"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.55473214387893677" green="0.82824712991714478" blue="0.98435819149017334" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0O1-CL-iZd" firstAttribute="top" secondItem="qlB-17-hym" secondAttribute="bottom" constant="8" symbolic="YES" id="BW3-VL-2UG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0O1-CL-iZd" secondAttribute="trailing" id="Bqr-Rr-Vs1"/>
@@ -187,12 +216,14 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundSelection" destination="2Dd-C8-p1x" id="1g7-c6-9XQ"/>
                         <outlet property="fontSelection" destination="94w-4M-uk3" id="LJs-Nd-2oj"/>
+                        <outlet property="selectFontText" destination="sgD-n4-kht" id="9pj-we-0S9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxt-OW-LNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="903" y="18"/>
+            <point key="canvasLocation" x="901.60000000000002" y="17.541229385307346"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
