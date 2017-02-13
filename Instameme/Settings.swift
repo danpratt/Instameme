@@ -31,6 +31,18 @@ struct Settings {
         NSStrokeWidthAttributeName: -3.0,
     ]
     
+    var funTextAttributesWhite: [String: Any] = [
+        NSStrokeColorAttributeName: UIColor.white,
+        NSForegroundColorAttributeName: UIColor.white,
+        NSStrokeWidthAttributeName: 0.0,
+        ]
+    
+    var funTextAttributesBlack: [String: Any] = [
+        NSStrokeColorAttributeName: UIColor.black,
+        NSForegroundColorAttributeName: UIColor.black,
+        NSStrokeWidthAttributeName: 0.0,
+        ]
+    
     // Fonts
     enum Fonts: String {
         case impact = "Impact"

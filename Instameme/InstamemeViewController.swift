@@ -59,12 +59,24 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Setup Empty State
     func setupMemeView() {
         // setup text attributes
-        if !settings.fontShouldBeBlack {
-            topTextField.defaultTextAttributes = self.settings.textAttributes
-            bottomTextField.defaultTextAttributes = self.settings.textAttributes
-        } else {
-            topTextField.defaultTextAttributes = self.settings.blackTextAttributes
-            bottomTextField.defaultTextAttributes = self.settings.blackTextAttributes
+        switch settings.fontShouldBeBlack {
+        case true:
+            if settings.font.fontName == Settings.Fonts.fun.rawValue {
+                topTextField.defaultTextAttributes = self.settings.funTextAttributesBlack
+                bottomTextField.defaultTextAttributes = self.settings.funTextAttributesBlack
+            } else {
+                topTextField.defaultTextAttributes = self.settings.blackTextAttributes
+                bottomTextField.defaultTextAttributes = self.settings.blackTextAttributes
+            }
+        default:
+            if settings.font.fontName == Settings.Fonts.fun.rawValue {
+                topTextField.defaultTextAttributes = self.settings.funTextAttributesWhite
+                bottomTextField.defaultTextAttributes = self.settings.funTextAttributesWhite
+            } else {
+                topTextField.defaultTextAttributes = self.settings.textAttributes
+                bottomTextField.defaultTextAttributes = self.settings.textAttributes
+            }
+
         }
         
         topTextField.font = settings.font
