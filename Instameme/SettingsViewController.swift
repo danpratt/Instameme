@@ -17,6 +17,7 @@ class SettingsViewController: UIViewController {
     var image: UIImage?
     var font: UIFont?
     var backgroundColor: UIColor?
+    var shouldShareButtonBeVisible: Bool!
     
     // UI Elements
     @IBOutlet weak var fontSelection: UISegmentedControl!
@@ -134,5 +135,6 @@ class SettingsViewController: UIViewController {
         memeVC.topText = self.topText
         memeVC.bottomText = self.bottomText
         memeVC.memeImage = self.image
+        memeVC.shouldShareButtonBeVisible = self.shouldShareButtonBeVisible
     }
 }

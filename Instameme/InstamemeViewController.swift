@@ -34,6 +34,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     var topText = "TOP"
     var bottomText = "BOTTOM"
     var backgroundColor: UIColor?
+    var shouldShareButtonBeVisible = false
     
     
     // Settings
@@ -78,7 +79,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         memeImageView.image = self.memeImage
         self.view.backgroundColor = settings.backgroundColor
         
-        shareButton.isEnabled = false
+        shareButton.isEnabled = shouldShareButtonBeVisible
         
         // set delegates
         topTextField.delegate = textFieldDelegate
@@ -108,7 +109,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         setupMemeView()
     }
 
-    
+    // Generate the memed image
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
@@ -128,13 +129,14 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         return memedImage
     }
     
-    // Actions from buttons
+    // MARK: Actions from buttons
     @IBAction func pickFromLibrary(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = .photoLibrary
         present(imagePicker, animated: true, completion: nil)
     }
+    
     @IBAction func pickFromCamera(_ sender: Any) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
@@ -142,7 +144,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         present(imagePicker, animated: true, completion: nil)
     }
     
-    // Prepare to view settings
+    // MARK: Prepare to view settings
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OpenSettings" {
             topText = topTextField.text ?? "TOP"
@@ -154,6 +156,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
             settingsController.bottomText = self.bottomText
             settingsController.image = self.memeImage
             settingsController.backgroundColor = self.backgroundColor
+            settingsController.shouldShareButtonBeVisible = self.shouldShareButtonBeVisible
         }
     }
     
