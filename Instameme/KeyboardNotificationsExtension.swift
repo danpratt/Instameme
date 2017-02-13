@@ -40,6 +40,8 @@ extension InstamemeViewController {
         if isViewMovedUp && bottomTextField.isFirstResponder {
             self.view.frame.origin.y = 0
                 isViewMovedUp = false
+        } else if self.view.frame.origin.y != 0 {
+            self.view.frame.origin.y = 0
         }
     }
     
