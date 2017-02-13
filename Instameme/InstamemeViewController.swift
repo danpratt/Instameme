@@ -35,13 +35,12 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     var bottomText = "BOTTOM"
     var backgroundColor: UIColor?
     
+    
     // Settings
     var settings = Settings()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.backgroundColor = self.view.backgroundColor
-        
 //        // Print list of fonts
 //        for font in UIFont.familyNames {
 //            print(font)
@@ -59,17 +58,25 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Setup Empty State
     func setupMemeView() {
         // setup text attributes
-        topTextField.defaultTextAttributes = self.settings.textAttributes
-        bottomTextField.defaultTextAttributes = self.settings.textAttributes
+        if !settings.fontShouldBeBlack {
+            topTextField.defaultTextAttributes = self.settings.textAttributes
+            bottomTextField.defaultTextAttributes = self.settings.textAttributes
+        } else {
+            topTextField.defaultTextAttributes = self.settings.blackTextAttributes
+            bottomTextField.defaultTextAttributes = self.settings.blackTextAttributes
+        }
+        
         topTextField.font = settings.font
         bottomTextField.font = settings.font
         topTextField.textAlignment = .center
         bottomTextField.textAlignment = .center
         
+        
         // setup initial states
         topTextField.text = self.topText
         bottomTextField.text = self.bottomText
         memeImageView.image = self.memeImage
+        self.view.backgroundColor = settings.backgroundColor
         
         shareButton.isEnabled = false
         
@@ -95,6 +102,9 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         topText = "TOP"
         bottomText = "BOTTOM"
         memeImage = nil
+        self.backgroundColor = Settings.blueColor
+        settings.backgroundColor = self.backgroundColor!
+        settings.fontShouldBeBlack = false
         setupMemeView()
     }
 
@@ -143,6 +153,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
             settingsController.topText = self.topText
             settingsController.bottomText = self.bottomText
             settingsController.image = self.memeImage
+            settingsController.backgroundColor = self.backgroundColor
         }
     }
     

@@ -187,38 +187,45 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Background Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvg-A3-CSf">
-                                <rect key="frame" x="40" y="157" width="295" height="49"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Dd-C8-p1x" userLabel="BackgroundColor">
-                                <rect key="frame" x="16" y="214" width="343" height="29"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="Blue"/>
-                                    <segment title="Black"/>
-                                    <segment title="White"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="backgroundColorChanged:" destination="KTB-ax-vEG" eventType="valueChanged" id="Ui0-Gr-YcA"/>
-                                </connections>
-                            </segmentedControl>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="p9z-OT-DFH" userLabel="Background Color Stack View">
+                                <rect key="frame" x="16" y="157" width="343" height="85"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Background Color" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvg-A3-CSf">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="49"/>
+                                        <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="40"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="2Dd-C8-p1x" userLabel="BackgroundColor">
+                                        <rect key="frame" x="0.0" y="57" width="343" height="29"/>
+                                        <segments>
+                                            <segment title="Blue"/>
+                                            <segment title="Black"/>
+                                            <segment title="White"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="backgroundColorChanged:" destination="KTB-ax-vEG" eventType="valueChanged" id="Ui0-Gr-YcA"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.55473214387893677" green="0.82824712991714478" blue="0.98435819149017334" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="0O1-CL-iZd" firstAttribute="top" secondItem="qlB-17-hym" secondAttribute="bottom" constant="8" symbolic="YES" id="BW3-VL-2UG"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0O1-CL-iZd" secondAttribute="trailing" id="Bqr-Rr-Vs1"/>
                             <constraint firstItem="0O1-CL-iZd" firstAttribute="leading" secondItem="LjB-UE-GXg" secondAttribute="leadingMargin" id="YUb-7G-4VN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p9z-OT-DFH" secondAttribute="trailing" id="a5t-W9-XNG"/>
+                            <constraint firstItem="p9z-OT-DFH" firstAttribute="top" secondItem="0O1-CL-iZd" secondAttribute="bottom" constant="43" id="i6q-Dw-CIe"/>
+                            <constraint firstItem="p9z-OT-DFH" firstAttribute="leading" secondItem="LjB-UE-GXg" secondAttribute="leadingMargin" id="nZK-as-JFk"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="backgroundColorLabel" destination="jvg-A3-CSf" id="e2Y-uG-iKn"/>
                         <outlet property="backgroundSelection" destination="2Dd-C8-p1x" id="1g7-c6-9XQ"/>
                         <outlet property="fontSelection" destination="94w-4M-uk3" id="LJs-Nd-2oj"/>
-                        <outlet property="selectFontText" destination="sgD-n4-kht" id="9pj-we-0S9"/>
+                        <outlet property="selectFontLabel" destination="sgD-n4-kht" id="yNj-OU-ymj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Wxt-OW-LNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
