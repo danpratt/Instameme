@@ -118,6 +118,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         self.backgroundColor = Settings.blueColor
         settings.backgroundColor = self.backgroundColor!
         settings.fontShouldBeBlack = false
+        self.shouldShareButtonBeVisible = false
         setupMemeView()
     }
 
