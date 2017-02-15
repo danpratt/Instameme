@@ -41,6 +41,7 @@ extension InstamemeViewController {
             view.frame.origin.y = 0
                 isViewMovedUp = false
         } else if view.frame.origin.y != 0 {
+            isViewMovedUp = false
             view.frame.origin.y = 0
         }
     }
