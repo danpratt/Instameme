@@ -87,13 +87,13 @@
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="tbj-Z4-YUl"/>
                                             <barButtonItem style="plain" systemItem="camera" id="Vy5-ma-xPd" userLabel="Camera">
                                                 <connections>
-                                                    <action selector="pickFromCamera:" destination="BYZ-38-t0r" id="jJ9-LP-g1j"/>
+                                                    <action selector="pickImage:" destination="BYZ-38-t0r" id="fs2-fX-3vu"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="PFQ-8J-Aix"/>
-                                            <barButtonItem title="Photos" style="plain" id="Kg6-4G-86x" userLabel="Library">
+                                            <barButtonItem tag="1" title="Photos" style="plain" id="Kg6-4G-86x" userLabel="Library">
                                                 <connections>
-                                                    <action selector="pickFromLibrary:" destination="BYZ-38-t0r" id="Wsn-Gd-63U"/>
+                                                    <action selector="pickImage:" destination="BYZ-38-t0r" id="Xfp-zn-OVl"/>
                                                 </connections>
                                             </barButtonItem>
                                             <barButtonItem style="plain" systemItem="flexibleSpace" id="ZHT-Pr-QEg"/>

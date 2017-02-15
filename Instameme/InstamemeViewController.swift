@@ -139,19 +139,26 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         setupMemeView()
     }
     
-    @IBAction func pickFromLibrary(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
+    // Called when user taps on either photos or camera buttons
+    @IBAction func pickImage(_ sender: UIBarButtonItem) {
+        switch sender.tag {
+        case 0:
+            pickImageFrom(.camera)
+        default:
+            pickImageFrom(.photoLibrary)
+        }
     }
     
-    @IBAction func pickFromCamera(_ sender: Any) {
+    // MARK: Pick an image
+    
+    // Displays image picker depending on source
+    func pickImageFrom(_ source: UIImagePickerControllerSourceType) {
         let imagePicker = UIImagePickerController()
         imagePicker.delegate = self
-        imagePicker.sourceType = .camera
+        imagePicker.sourceType = source
         present(imagePicker, animated: true, completion: nil)
     }
+
 
     // MARK: Generate the memed image
     
