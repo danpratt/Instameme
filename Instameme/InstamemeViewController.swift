@@ -106,6 +106,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button Actions
 
+    // Called when user taps on Share button
     @IBAction func share(_ sender: UIBarButtonItem) {
         // Generate a Meme
         let generatedMemeImage = generateMemedImage()
@@ -114,7 +115,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         let activityViewController = UIActivityViewController(activityItems: [(generatedMemeImage) as UIImage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
         
-        // only save the meme when the view controller on completion
+        // only save the meme if the user performs some action, does not save if activityViewController is cancelled
         activityViewController.completionWithItemsHandler = {(activity, completed, items, error) in
             if (completed) {
                 let _ = self.save(generatedMemeImage)
