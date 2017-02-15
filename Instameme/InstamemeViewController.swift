@@ -106,16 +106,26 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // MARK: Button Actions
 
-    @IBAction func save(_ sender: Any) {
-        // Create the meme
-        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+    @IBAction func share(_ sender: UIBarButtonItem) {
+        // Generate a Meme
+        let generatedMemeImage = generateMemedImage()
         
-        let activityViewController = UIActivityViewController(activityItems: [(meme?.memedImage)! as UIImage], applicationActivities: nil)
+        // Present an activity controller that allows user to share meme
+        let activityViewController = UIActivityViewController(activityItems: [(generatedMemeImage) as UIImage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
-        present(activityViewController, animated: true, completion: nil)
         
+        // only save the meme when the view controller on completion
+        activityViewController.completionWithItemsHandler = {(activity, completed, items, error) in
+            if (completed) {
+                let _ = self.save(generatedMemeImage)
+            }
+        }
+        
+        // Show controller to user
+        present(activityViewController, animated: true, completion: nil)
     }
-    
+
+    // Resets the meme editor to defaults and sets up a new blank meme
     @IBAction func cancel(_ sender: Any) {
         // Reseting doesn't update font choice
         // Might change this later
@@ -144,6 +154,13 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     }
 
     // MARK: Generate the memed image
+    
+    // Save the meme
+    func save(_ memedImage: UIImage) {
+        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
+    }
+    
+    // Generate a meme object
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
