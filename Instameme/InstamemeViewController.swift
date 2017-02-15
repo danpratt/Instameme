@@ -42,11 +42,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        // Print list of fonts
-//        for font in UIFont.familyNames {
-//            print(font)
-//        }
-
 
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -62,19 +57,19 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         switch settings.fontShouldBeBlack {
         case true:
             if settings.font.fontName == Settings.Fonts.fun.rawValue {
-                topTextField.defaultTextAttributes = self.settings.funTextAttributesBlack
-                bottomTextField.defaultTextAttributes = self.settings.funTextAttributesBlack
+                topTextField.defaultTextAttributes = settings.funTextAttributesBlack
+                bottomTextField.defaultTextAttributes = settings.funTextAttributesBlack
             } else {
-                topTextField.defaultTextAttributes = self.settings.blackTextAttributes
-                bottomTextField.defaultTextAttributes = self.settings.blackTextAttributes
+                topTextField.defaultTextAttributes = settings.blackTextAttributes
+                bottomTextField.defaultTextAttributes = settings.blackTextAttributes
             }
         default:
             if settings.font.fontName == Settings.Fonts.fun.rawValue {
-                topTextField.defaultTextAttributes = self.settings.funTextAttributesWhite
-                bottomTextField.defaultTextAttributes = self.settings.funTextAttributesWhite
+                topTextField.defaultTextAttributes = settings.funTextAttributesWhite
+                bottomTextField.defaultTextAttributes = settings.funTextAttributesWhite
             } else {
-                topTextField.defaultTextAttributes = self.settings.textAttributes
-                bottomTextField.defaultTextAttributes = self.settings.textAttributes
+                topTextField.defaultTextAttributes = settings.textAttributes
+                bottomTextField.defaultTextAttributes = settings.textAttributes
             }
 
         }
@@ -86,10 +81,10 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         
         
         // setup initial states
-        topTextField.text = self.topText
-        bottomTextField.text = self.bottomText
-        memeImageView.image = self.memeImage
-        self.view.backgroundColor = settings.backgroundColor
+        topTextField.text = topText
+        bottomTextField.text = bottomText
+        memeImageView.image = memeImage
+        view.backgroundColor = settings.backgroundColor
         
         shareButton.isEnabled = shouldShareButtonBeVisible
         
@@ -101,7 +96,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func save(_ sender: Any) {
         // Create the meme
-        self.meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
+        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: generateMemedImage())
         
         let activityViewController = UIActivityViewController(activityItems: [(meme?.memedImage)! as UIImage], applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = self.view
@@ -115,10 +110,10 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         topText = "TOP"
         bottomText = "BOTTOM"
         memeImage = nil
-        self.backgroundColor = Settings.blueColor
-        settings.backgroundColor = self.backgroundColor!
+        backgroundColor = Settings.blueColor
+        settings.backgroundColor = backgroundColor!
         settings.fontShouldBeBlack = false
-        self.shouldShareButtonBeVisible = false
+        shouldShareButtonBeVisible = false
         setupMemeView()
     }
 
@@ -126,18 +121,18 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
-        self.pickerToolbar.isHidden = true
-        self.memeShareCancelBar.isHidden = true
+        pickerToolbar.isHidden = true
+        memeShareCancelBar.isHidden = true
         
         // Render view to an image
-        UIGraphicsBeginImageContext(self.view.frame.size)
-        view.drawHierarchy(in: self.view.frame, afterScreenUpdates: true)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.drawHierarchy(in: view.frame, afterScreenUpdates: true)
         let memedImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
         // Show toolbar and navbar again
-        self.pickerToolbar.isHidden = false
-        self.memeShareCancelBar.isHidden = false
+        pickerToolbar.isHidden = false
+        memeShareCancelBar.isHidden = false
         
         return memedImage
     }
@@ -164,12 +159,12 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
             bottomText = bottomTextField.text ?? "BOTTOM"
             memeImage = memeImageView.image
             let settingsController = segue.destination as! SettingsViewController
-            settingsController.currentSettings = self.settings
-            settingsController.topText = self.topText
-            settingsController.bottomText = self.bottomText
-            settingsController.image = self.memeImage
-            settingsController.backgroundColor = self.backgroundColor
-            settingsController.shouldShareButtonBeVisible = self.shouldShareButtonBeVisible
+            settingsController.currentSettings = settings
+            settingsController.topText = topText
+            settingsController.bottomText = bottomText
+            settingsController.image = memeImage
+            settingsController.backgroundColor = backgroundColor
+            settingsController.shouldShareButtonBeVisible = shouldShareButtonBeVisible
         }
     }
     

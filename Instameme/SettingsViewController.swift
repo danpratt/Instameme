@@ -28,11 +28,11 @@ class SettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.font = currentSettings.font
-        self.backgroundColor = currentSettings.backgroundColor
+        font = currentSettings.font
+        backgroundColor = currentSettings.backgroundColor
         newSettings = currentSettings
         selectFontLabel.font = font
-        self.view.backgroundColor = self.backgroundColor
+        view.backgroundColor = backgroundColor
         
         if currentSettings.fontShouldBeBlack {
             makeFontsBlack()
@@ -92,24 +92,24 @@ class SettingsViewController: UIViewController {
                 makeFontsWhite()
                 newSettings.fontShouldBeBlack = false
             }
-            self.backgroundColor = Settings.blueColor
+            backgroundColor = Settings.blueColor
         case 1:
             print("black")
             if newSettings.fontShouldBeBlack {
                 makeFontsWhite()
                 newSettings.fontShouldBeBlack = false
             }
-            self.backgroundColor = UIColor.black
+            backgroundColor = UIColor.black
         case 2:
             print("white")
-            self.backgroundColor = UIColor.white
+            backgroundColor = UIColor.white
             newSettings.fontShouldBeBlack = true
             makeFontsBlack()
         default:
             print("This shouldn't happen")
         }
         
-        self.view.backgroundColor = backgroundColor
+        view.backgroundColor = backgroundColor
         newSettings.backgroundColor = backgroundColor!
     }
     
@@ -132,9 +132,9 @@ class SettingsViewController: UIViewController {
         if !(segue.identifier == "CancelSettings") {
             memeVC.settings = newSettings!
         }
-        memeVC.topText = self.topText
-        memeVC.bottomText = self.bottomText
-        memeVC.memeImage = self.image
-        memeVC.shouldShareButtonBeVisible = self.shouldShareButtonBeVisible
+        memeVC.topText = topText
+        memeVC.bottomText = bottomText
+        memeVC.memeImage = image
+        memeVC.shouldShareButtonBeVisible = shouldShareButtonBeVisible
     }
 }
