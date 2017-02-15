@@ -53,46 +53,58 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Setup Empty State
     func setupMemeView() {
+        
+        // Do textfield prep work
+        prepareAttributes()
+        prepareTextField(textField: topTextField, containingText: topText)
+        prepareTextField(textField: bottomTextField, containingText: bottomText)
+        
+        // setup image and background
+
+        memeImageView.image = memeImage
+        view.backgroundColor = settings.backgroundColor
+        
+        // Set sharebutton to enabled or disabled depending on if a picture has been selected
+        shareButton.isEnabled = shouldShareButtonBeVisible
+        
+    }
+    
+    // MARK: TextField Setup
+    
+    // Setup textfield attributes
+    func prepareAttributes () {
         // setup text attributes
         switch settings.fontShouldBeBlack {
         case true:
             if settings.font.fontName == Settings.Fonts.fun.rawValue {
-                topTextField.defaultTextAttributes = settings.funTextAttributesBlack
-                bottomTextField.defaultTextAttributes = settings.funTextAttributesBlack
+                setupTextAttributes(withSettingsFor: settings.funTextAttributesBlack)
             } else {
-                topTextField.defaultTextAttributes = settings.blackTextAttributes
-                bottomTextField.defaultTextAttributes = settings.blackTextAttributes
+                setupTextAttributes(withSettingsFor: settings.blackTextAttributes)
             }
         default:
             if settings.font.fontName == Settings.Fonts.fun.rawValue {
-                topTextField.defaultTextAttributes = settings.funTextAttributesWhite
-                bottomTextField.defaultTextAttributes = settings.funTextAttributesWhite
+                setupTextAttributes(withSettingsFor: settings.funTextAttributesWhite)
             } else {
-                topTextField.defaultTextAttributes = settings.textAttributes
-                bottomTextField.defaultTextAttributes = settings.textAttributes
+                setupTextAttributes(withSettingsFor: settings.textAttributes)
             }
-
         }
-        
-        topTextField.font = settings.font
-        bottomTextField.font = settings.font
-        topTextField.textAlignment = .center
-        bottomTextField.textAlignment = .center
-        
-        
-        // setup initial states
-        topTextField.text = topText
-        bottomTextField.text = bottomText
-        memeImageView.image = memeImage
-        view.backgroundColor = settings.backgroundColor
-        
-        shareButton.isEnabled = shouldShareButtonBeVisible
-        
-        // set delegates
-        topTextField.delegate = textFieldDelegate
-        bottomTextField.delegate = textFieldDelegate
-        
     }
+    
+    // Sets initial textfield delegate, allignment, fonts and text
+    func prepareTextField(textField: UITextField, containingText text: String) {
+        textField.font = settings.font
+        textField.text = text
+        textField.textAlignment = .center
+        textField.delegate = textFieldDelegate
+    }
+    
+    // Sets text attributes for top and bottom textfields
+    func setupTextAttributes(withSettingsFor textSettings: [String: Any]) {
+        topTextField.defaultTextAttributes = textSettings
+        bottomTextField.defaultTextAttributes = textSettings
+    }
+    
+    // MARK: Button Actions
 
     @IBAction func save(_ sender: Any) {
         // Create the meme
@@ -116,8 +128,22 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         shouldShareButtonBeVisible = false
         setupMemeView()
     }
+    
+    @IBAction func pickFromLibrary(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .photoLibrary
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func pickFromCamera(_ sender: Any) {
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = .camera
+        present(imagePicker, animated: true, completion: nil)
+    }
 
-    // Generate the memed image
+    // MARK: Generate the memed image
     func generateMemedImage() -> UIImage {
         
         // Hide toolbar and navbar
@@ -137,20 +163,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         return memedImage
     }
     
-    // MARK: Actions from buttons
-    @IBAction func pickFromLibrary(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .photoLibrary
-        present(imagePicker, animated: true, completion: nil)
-    }
-    
-    @IBAction func pickFromCamera(_ sender: Any) {
-        let imagePicker = UIImagePickerController()
-        imagePicker.delegate = self
-        imagePicker.sourceType = .camera
-        present(imagePicker, animated: true, completion: nil)
-    }
     
     // MARK: Prepare to view settings
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
