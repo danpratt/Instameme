@@ -35,9 +35,9 @@ class SettingsViewController: UIViewController {
         view.backgroundColor = backgroundColor
         
         if currentSettings.fontShouldBeBlack {
-            makeFontsBlack()
+            setFontsToColor(.black)
         } else {
-            makeFontsWhite()
+            setFontsToColor(.white)
         }
         
         // Display initial configuration for segmented controls
@@ -89,14 +89,14 @@ class SettingsViewController: UIViewController {
         case 0:
             print("blue")
             if newSettings.fontShouldBeBlack {
-                makeFontsWhite()
+                setFontsToColor(.white)
                 newSettings.fontShouldBeBlack = false
             }
             backgroundColor = Settings.blueColor
         case 1:
             print("black")
             if newSettings.fontShouldBeBlack {
-                makeFontsWhite()
+                setFontsToColor(.white)
                 newSettings.fontShouldBeBlack = false
             }
             backgroundColor = UIColor.black
@@ -104,7 +104,7 @@ class SettingsViewController: UIViewController {
             print("white")
             backgroundColor = UIColor.white
             newSettings.fontShouldBeBlack = true
-            makeFontsBlack()
+            setFontsToColor(.black)
         default:
             print("This shouldn't happen")
         }
@@ -113,18 +113,11 @@ class SettingsViewController: UIViewController {
         newSettings.backgroundColor = backgroundColor!
     }
     
-    func makeFontsBlack() {
-        selectFontLabel.textColor = UIColor.black
-        backgroundColorLabel.textColor = UIColor.black
-        fontSelection.tintColor = UIColor.black
-        backgroundSelection.tintColor = UIColor.black
-    }
-    
-    func makeFontsWhite() {
-        selectFontLabel.textColor = UIColor.white
-        backgroundColorLabel.textColor = UIColor.white
-        fontSelection.tintColor = UIColor.white
-        backgroundSelection.tintColor = UIColor.white
+    func setFontsToColor(_ color: UIColor) {
+        selectFontLabel.textColor = color
+        backgroundColorLabel.textColor = color
+        fontSelection.tintColor = color
+        backgroundSelection.tintColor = color
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
