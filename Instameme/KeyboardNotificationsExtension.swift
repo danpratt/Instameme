@@ -30,7 +30,7 @@ extension InstamemeViewController {
     // Called when the keyboard is about to show up, moves view up so it isn't covered up by the keyboard
     func keyboardWillShow(_ notification: Notification) {
         if !isViewMovedUp && bottomTextField.isFirstResponder {
-            view.frame.origin.y = getKeyboardHeight(notification) * -1
+            view.frame.origin.y = -getKeyboardHeight(notification)
             isViewMovedUp = true
         }
     }
