@@ -182,13 +182,13 @@
                                 <items>
                                     <barButtonItem tag="1" systemItem="done" id="X7H-pq-14a">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="SaveSettings" id="224-8i-Kvk"/>
+                                            <action selector="closeSettingsActions:" destination="KTB-ax-vEG" id="fLZ-u2-5xP"/>
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="jb7-JE-IDH"/>
                                     <barButtonItem tag="2" systemItem="cancel" id="Dyp-LS-EWM">
                                         <connections>
-                                            <segue destination="BYZ-38-t0r" kind="show" identifier="CancelSettings" id="JF1-lL-6Or"/>
+                                            <action selector="closeSettingsActions:" destination="KTB-ax-vEG" id="Evz-Cf-bQZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -239,7 +239,4 @@
             <point key="canvasLocation" x="901.60000000000002" y="17.541229385307346"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="JF1-lL-6Or"/>
-    </inferredMetricsTieBreakers>
 </document>

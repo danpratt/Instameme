@@ -34,6 +34,7 @@ class SettingsViewController: UIViewController {
         selectFontLabel.font = font
         view.backgroundColor = backgroundColor
         
+        // Checks current settings and sets UI elements accordingly
         if currentSettings.fontShouldBeBlack {
             setFontsToColor(.black)
         } else {
@@ -44,6 +45,9 @@ class SettingsViewController: UIViewController {
         setupSegments()
     }
     
+    // MARK: Functions
+    
+    // Sets segments up so they are selected on correct values
     func setupSegments() {
         // Set font segment
         if font?.fontName == Settings.Fonts.impact.rawValue {
@@ -64,7 +68,17 @@ class SettingsViewController: UIViewController {
 
     }
     
+    // Sets fonts to specified color
+    func setFontsToColor(_ color: UIColor) {
+        selectFontLabel.textColor = color
+        backgroundColorLabel.textColor = color
+        fontSelection.tintColor = color
+        backgroundSelection.tintColor = color
+    }
     
+    // MARK: IBActions
+    
+    // Font selector segment controls
     @IBAction func fontValueChanged(_ sender: UISegmentedControl) {
         let index = fontSelection.selectedSegmentIndex
         switch index {
@@ -82,7 +96,7 @@ class SettingsViewController: UIViewController {
         newSettings.font = font!
     }
     
-    
+    // background color segment controls
     @IBAction func backgroundColorChanged(_ sender: UISegmentedControl) {
         let index = backgroundSelection.selectedSegmentIndex
         switch index {
@@ -113,21 +127,16 @@ class SettingsViewController: UIViewController {
         newSettings.backgroundColor = backgroundColor!
     }
     
-    func setFontsToColor(_ color: UIColor) {
-        selectFontLabel.textColor = color
-        backgroundColorLabel.textColor = color
-        fontSelection.tintColor = color
-        backgroundSelection.tintColor = color
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let memeVC = segue.destination as! InstamemeViewController
-        if !(segue.identifier == "CancelSettings") {
-            memeVC.settings = newSettings!
+    // Called when user clicks done or cancel
+    @IBAction func closeSettingsActions(_ sender: UIBarButtonItem) {
+        let returnView = presentingViewController as! InstamemeViewController
+        switch sender.tag {
+        case 1:
+            returnView.settings = newSettings
+            returnView.setupMemeView()
+            dismiss(animated: true, completion: nil)
+        default:
+            dismiss(animated: true, completion: nil)
         }
-        memeVC.topText = topText
-        memeVC.bottomText = bottomText
-        memeVC.memeImage = image
-        memeVC.shouldShareButtonBeVisible = shouldShareButtonBeVisible
     }
 }

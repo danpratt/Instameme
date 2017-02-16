@@ -188,7 +188,6 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         return memedImage
     }
     
-    
     // MARK: Prepare to view settings
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OpenSettings" {
