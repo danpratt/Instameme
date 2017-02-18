@@ -165,7 +165,11 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Save the meme
     func save(_ memedImage: UIImage) {
+        print("Now saving")
         meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appDelegate.memes.append(meme!)
+        print (appDelegate.memes.count)
     }
     
     // Generate a meme object
