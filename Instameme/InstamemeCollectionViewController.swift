@@ -17,13 +17,13 @@ class InstamemeCollectionViewController: UICollectionViewController {
     
     @IBOutlet weak var instamemeFlowLayout: UICollectionViewFlowLayout!
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
 
         // Load up memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
+        print("collection count \(memes.count)")
         // Setup flow layout
         setupFlowLayout()
     }
@@ -54,6 +54,7 @@ class InstamemeCollectionViewController: UICollectionViewController {
         
         // Update cell properties
         cell.memeImage.image = meme.memedImage
+        cell.memeImage.contentMode = .scaleAspectFit
         
         return cell
     }

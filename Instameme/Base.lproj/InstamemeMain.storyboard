@@ -24,21 +24,39 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MemesTableIdentifier" id="4v1-cl-9js">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableOfMemes" textLabel="eog-R6-lC0" detailTextLabel="XM1-81-ZTt" style="IBUITableViewCellStyleSubtitle" id="4v1-cl-9js">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4v1-cl-9js" id="dKI-xN-TmJ">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eog-R6-lC0">
+                                            <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="XM1-81-ZTt">
+                                            <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="vDl-P8-BIj" id="B5e-a9-HmM"/>
-                            <outlet property="delegate" destination="vDl-P8-BIj" id="Dd3-e6-ZPS"/>
+                            <outlet property="dataSource" destination="vDl-P8-BIj" id="2eR-XY-yLm"/>
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="1qZ-mP-XxQ"/>
+                    <connections>
+                        <outlet property="memesTableView" destination="I3X-tW-D64" id="wzv-kf-Xmi"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDV-nu-21v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -66,7 +84,7 @@
         <scene sceneID="hrd-bz-tdT">
             <objects>
                 <navigationController id="6zp-sy-e74" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Table" id="44F-Cx-eDb"/>
+                    <tabBarItem key="tabBarItem" title="Table" image="collection" id="44F-Cx-eDb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="8qa-Fa-e1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -138,7 +156,7 @@
         <scene sceneID="iJO-fK-0g7">
             <objects>
                 <navigationController id="Znl-mL-5eP" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" systemItem="mostViewed" id="MJN-sC-DSS"/>
+                    <tabBarItem key="tabBarItem" title="" image="table" id="MJN-sC-DSS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uMb-Hl-T07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -376,4 +394,8 @@
             <point key="canvasLocation" x="901.60000000000002" y="17.541229385307346"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="collection" width="29" height="30"/>
+        <image name="table" width="30" height="30"/>
+    </resources>
 </document>

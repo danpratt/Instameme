@@ -101,21 +101,18 @@ class SettingsViewController: UIViewController {
         let index = backgroundSelection.selectedSegmentIndex
         switch index {
         case 0:
-            print("blue")
             if newSettings.fontShouldBeBlack {
                 setFontsToColor(.white)
                 newSettings.fontShouldBeBlack = false
             }
             backgroundColor = Settings.blueColor
         case 1:
-            print("black")
             if newSettings.fontShouldBeBlack {
                 setFontsToColor(.white)
                 newSettings.fontShouldBeBlack = false
             }
             backgroundColor = UIColor.black
         case 2:
-            print("white")
             backgroundColor = UIColor.white
             newSettings.fontShouldBeBlack = true
             setFontsToColor(.black)

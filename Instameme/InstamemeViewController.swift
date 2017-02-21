@@ -170,6 +170,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appDelegate.memes.append(meme!)
         print (appDelegate.memes.count)
+        dismiss(animated: true, completion: nil)
     }
     
     // Generate a meme object
