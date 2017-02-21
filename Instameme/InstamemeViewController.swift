@@ -19,6 +19,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var memeShareCancelBar: UINavigationBar!
     @IBOutlet weak var shareButton: UIBarButtonItem!
     
+    @IBOutlet weak var cancelButton: UIBarButtonItem!
     // Image View
     @IBOutlet weak var memeImageView: UIImageView!
     
@@ -39,9 +40,9 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Settings
     var settings = Settings()
+    var canCancel = false
     
     override func viewDidLoad() {
-        super.viewDidLoad()
 
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
@@ -66,6 +67,8 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         
         // Set sharebutton to enabled or disabled depending on if a picture has been selected
         shareButton.isEnabled = shouldShareButtonBeVisible
+        // Set cancel button to enable or not depending on if coming from the memes collection views
+        cancelButton.isEnabled = canCancel
         
     }
     
@@ -137,7 +140,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         settings.backgroundColor = backgroundColor!
         settings.fontShouldBeBlack = false
         shouldShareButtonBeVisible = false
-        setupMemeView()
+        dismiss(animated: true, completion: nil)
     }
     
     // Called when user taps on either photos or camera buttons

@@ -23,7 +23,6 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         // Load up memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-        print("table count \(memes.count)")
 
         memesTableView.reloadData()
         
@@ -43,12 +42,21 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         let currentMeme = memes[(indexPath as NSIndexPath).row]
     
         // Setup cell using meme data
-        cell?.textLabel?.text = currentMeme.topText
-        cell?.detailTextLabel?.text = currentMeme.bottomText
+        cell?.textLabel?.text = "\(currentMeme.topText)...\(currentMeme.bottomText)"
         cell?.imageView?.image = currentMeme.memedImage
         cell?.imageView?.contentMode = .scaleAspectFit
         
         return cell!
+    }
+    
+    // MARK: Prepare for segue
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToEdit" {
+            let memeEditorVC = storyboard?.instantiateViewController(withIdentifier: "MemeCreatorStoryboard") as! InstamemeViewController
+            memeEditorVC.canCancel = true
+            present(memeEditorVC, animated: true, completion: nil)
+        }
     }
 
  }

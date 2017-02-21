@@ -59,6 +59,15 @@ class InstamemeCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // MARK: Prepare for segue
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segueToEdit" {
+            let memeEditorVC = storyboard?.instantiateViewController(withIdentifier: "MemeCreatorStoryboard") as! InstamemeViewController
+            memeEditorVC.canCancel = true
+            present(memeEditorVC, animated: true, completion: nil)
+        }
+    }
+
 
 }
