@@ -34,6 +34,8 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         super.viewWillAppear(animated)
         memes = (UIApplication.shared.delegate as! AppDelegate).memes
         memesTableView!.reloadData()
+        // Make sure the tab bar shows up
+        tabBarController?.tabBar.isHidden = false
     }
     
     // Bases number of rows on the number of memes

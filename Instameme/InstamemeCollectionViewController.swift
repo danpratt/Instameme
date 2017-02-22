@@ -33,12 +33,14 @@ class InstamemeCollectionViewController: UICollectionViewController {
         super.viewWillAppear(animated)
         memes = (UIApplication.shared.delegate as! AppDelegate).memes
         memeCollectionView!.reloadData()
+        // Make sure bottom tab is visible
+        tabBarController?.tabBar.isHidden = false
     }
     
     // MARK: Functions
     
     func setupFlowLayout() {
-        let space:CGFloat = 8.0
+        let space:CGFloat = 3.0
         let dimension = (view.frame.size.width - (2 * space)) / 3.0
         
         instamemeFlowLayout.minimumInteritemSpacing = space
