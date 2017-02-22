@@ -41,7 +41,8 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Settings
     var settings = Settings()
     var canCancel = false
-    
+
+    // MARK: ViewDidLoad
     override func viewDidLoad() {
 
         // Disable the camera button if user doesn't have one
@@ -140,6 +141,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         settings.backgroundColor = backgroundColor!
         settings.fontShouldBeBlack = false
         shouldShareButtonBeVisible = false
+
         dismiss(animated: true, completion: nil)
     }
     
@@ -168,11 +170,17 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Save the meme
     func save(_ memedImage: UIImage) {
-        print("Now saving")
-        meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
-        appDelegate.memes.append(meme!)
-        print (appDelegate.memes.count)
+        if meme == nil {
+            meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memes.append(meme!)
+        } else {
+            meme?.topText = topTextField.text!
+            meme?.bottomText = bottomTextField.text!
+            meme?.originalImage = memeImageView.image!
+            meme?.memedImage = memedImage
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     

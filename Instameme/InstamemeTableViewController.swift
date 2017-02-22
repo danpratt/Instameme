@@ -25,18 +25,18 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         memes = appDelegate.memes
 
         memesTableView.reloadData()
-        
         if memes.count == 0 {
             let instamemeVC = storyboard!.instantiateViewController(withIdentifier: "MemeCreatorStoryboard") as! InstamemeViewController
             navigationController!.present(instamemeVC, animated: true, completion: nil)
         }
     }
     
+    // Bases number of rows on the number of memes
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(memes.count)
         return memes.count
     }
     
+    // Draws cell with image, and text from meme
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseID)
         let currentMeme = memes[(indexPath as NSIndexPath).row]
@@ -47,6 +47,16 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         cell?.imageView?.contentMode = .scaleAspectFit
         
         return cell!
+    }
+    
+    // Allow user to view the meme
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let memeViewerVC = storyboard?.instantiateViewController(withIdentifier: "MemeViewer") as! ViewMemeViewController
+        let meme = memes[indexPath.row]
+ 
+        memeViewerVC.meme = meme
+        
+        navigationController?.pushViewController(memeViewerVC, animated: true)
     }
     
     // MARK: Prepare for segue

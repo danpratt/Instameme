@@ -23,7 +23,6 @@ class InstamemeCollectionViewController: UICollectionViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
-        print("collection count \(memes.count)")
         // Setup flow layout
         setupFlowLayout()
     }
@@ -57,6 +56,16 @@ class InstamemeCollectionViewController: UICollectionViewController {
         cell.memeImage.contentMode = .scaleAspectFit
         
         return cell
+    }
+    
+    // Called when a collection view is tapped
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let memeViewerVC = storyboard?.instantiateViewController(withIdentifier: "MemeViewer") as! ViewMemeViewController
+        let meme = memes[indexPath.row]
+        
+        memeViewerVC.meme = meme
+        
+        navigationController?.pushViewController(memeViewerVC, animated: true)
     }
     
     // MARK: Prepare for segue
