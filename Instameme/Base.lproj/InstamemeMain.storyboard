@@ -210,16 +210,16 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wJ4-eq-GDH" userLabel="MemedImage">
-                                <rect key="frame" x="16" y="64" width="343" height="583"/>
+                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wJ4-eq-GDH" firstAttribute="top" secondItem="fSJ-Gu-23Q" secondAttribute="bottom" id="7gw-zP-K1r"/>
-                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="trailing" secondItem="8BJ-l3-N9a" secondAttribute="trailingMargin" id="JDO-Pd-eHx"/>
+                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="trailing" secondItem="8BJ-l3-N9a" secondAttribute="trailingMargin" constant="20" id="JDO-Pd-eHx"/>
                             <constraint firstItem="wJ4-eq-GDH" firstAttribute="centerX" secondItem="8BJ-l3-N9a" secondAttribute="centerX" id="Lju-QM-MDl"/>
-                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="leading" secondItem="8BJ-l3-N9a" secondAttribute="leadingMargin" id="hgk-Gz-oVw"/>
-                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="centerY" secondItem="8BJ-l3-N9a" secondAttribute="centerY" constant="22" id="wVb-3h-rmf"/>
+                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="leading" secondItem="8BJ-l3-N9a" secondAttribute="leadingMargin" constant="-20" id="hgk-Gz-oVw"/>
+                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="centerY" secondItem="8BJ-l3-N9a" secondAttribute="centerY" constant="32" id="wVb-3h-rmf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="KGC-oy-fJU">
@@ -235,7 +235,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o5a-2h-K1l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="601" y="508"/>
+            <point key="canvasLocation" x="600.79999999999995" y="507.79610194902551"/>
         </scene>
         <!--Instameme View Controller-->
         <scene sceneID="tne-QT-ifu">
