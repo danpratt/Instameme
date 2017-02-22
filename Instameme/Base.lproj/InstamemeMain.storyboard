@@ -156,6 +156,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="instamemeFlowLayout" destination="XfF-bi-f5n" id="Q4I-Kq-6Po"/>
+                        <outlet property="memeCollectionView" destination="Og4-wY-js9" id="B02-bq-1KU"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2do-nn-1FF" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -209,12 +210,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wJ4-eq-GDH" userLabel="MemedImage">
-                                <rect key="frame" x="16" y="108" width="343" height="495"/>
+                                <rect key="frame" x="16" y="64" width="343" height="583"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="top" secondItem="fSJ-Gu-23Q" secondAttribute="bottom" constant="44" id="7gw-zP-K1r"/>
+                            <constraint firstItem="wJ4-eq-GDH" firstAttribute="top" secondItem="fSJ-Gu-23Q" secondAttribute="bottom" id="7gw-zP-K1r"/>
                             <constraint firstItem="wJ4-eq-GDH" firstAttribute="trailing" secondItem="8BJ-l3-N9a" secondAttribute="trailingMargin" id="JDO-Pd-eHx"/>
                             <constraint firstItem="wJ4-eq-GDH" firstAttribute="centerX" secondItem="8BJ-l3-N9a" secondAttribute="centerX" id="Lju-QM-MDl"/>
                             <constraint firstItem="wJ4-eq-GDH" firstAttribute="leading" secondItem="8BJ-l3-N9a" secondAttribute="leadingMargin" id="hgk-Gz-oVw"/>
@@ -460,6 +461,6 @@
         <image name="table" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="8km-hx-Qdo"/>
+        <segue reference="ins-qK-nG9"/>
     </inferredMetricsTieBreakers>
 </document>

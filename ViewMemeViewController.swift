@@ -44,7 +44,7 @@ class ViewMemeViewController: UIViewController {
         editorVC.shouldShareButtonBeVisible = true
         editorVC.canCancel = true
 
-        present(editorVC, animated: true, completion: nil)
+        navigationController?.present(editorVC, animated: true, completion: nil)
         
         shouldReturnToRoot = true
     }

@@ -170,16 +170,16 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     
     // Save the meme
     func save(_ memedImage: UIImage) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if meme == nil {
             meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-            appDelegate.memes.append(meme!)
         } else {
             meme?.topText = topTextField.text!
             meme?.bottomText = bottomTextField.text!
             meme?.originalImage = memeImageView.image!
             meme?.memedImage = memedImage
         }
+        appDelegate.memes.append(meme!)
         
         dismiss(animated: true, completion: nil)
     }

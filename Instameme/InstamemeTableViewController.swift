@@ -17,18 +17,23 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
     // MARK: IBOutlets
     @IBOutlet var memesTableView: UITableView!
     
-    // Does work when view will appear
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        // Load up memes
+    // Does work when view will load
+    override func viewDidLoad() {
+        super.viewDidLoad()
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
-
-        memesTableView.reloadData()
+        
         if memes.count == 0 {
             let instamemeVC = storyboard!.instantiateViewController(withIdentifier: "MemeCreatorStoryboard") as! InstamemeViewController
             navigationController!.present(instamemeVC, animated: true, completion: nil)
         }
+    }
+
+    //  Refresh table when we get back to it from editing
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
+        memesTableView!.reloadData()
     }
     
     // Bases number of rows on the number of memes

@@ -15,16 +15,24 @@ class InstamemeCollectionViewController: UICollectionViewController {
     
     // MARK: IBOutlets
     
+    @IBOutlet var memeCollectionView: UICollectionView!
     @IBOutlet weak var instamemeFlowLayout: UICollectionViewFlowLayout!
-
-    override func viewWillAppear(_ animated: Bool) {
-
+    
+    // Initial setup
+    override func viewDidLoad() {
         // Load up memes
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         memes = appDelegate.memes
         
         // Setup flow layout
         setupFlowLayout()
+    }
+
+    //  Refresh collection when we get back to it from editing
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        memes = (UIApplication.shared.delegate as! AppDelegate).memes
+        memeCollectionView!.reloadData()
     }
     
     // MARK: Functions
