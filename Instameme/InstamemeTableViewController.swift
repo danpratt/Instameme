@@ -56,6 +56,24 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         return cell!
     }
     
+    // Enable actions on table
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == UITableViewCellEditingStyle.delete) {
+            // handle delete by removing from local memes
+            memes.remove(at: indexPath.row)
+            // update the shared app delegate meme (could have everything access app delegate directly to remove the need for this step, but I think it is better to have the seperation for safety
+            (UIApplication.shared.delegate as! AppDelegate).memes = memes
+            // reload the data in the view so it goes away
+            memesTableView!.reloadData()
+        }
+
+    }
+
+    
     // Allow user to view the meme
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let memeViewerVC = storyboard?.instantiateViewController(withIdentifier: "MemeViewer") as! ViewMemeViewController

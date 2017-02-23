@@ -30,7 +30,7 @@ class ViewMemeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         if shouldReturnToRoot {
-            self.navigationController?.popToRootViewController(animated: true)
+            _ = self.navigationController?.popToRootViewController(animated: true)
         }
         
     }
