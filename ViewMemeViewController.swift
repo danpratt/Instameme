@@ -24,6 +24,7 @@ class ViewMemeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         memeImage.image = meme?.memedImage
+        view.backgroundColor = meme?.settings.backgroundColor
         tabBarController?.tabBar.isHidden = true
     }
     

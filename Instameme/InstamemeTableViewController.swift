@@ -96,7 +96,6 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
         }
 
     }
-
     
     // Allow user to view the meme
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
