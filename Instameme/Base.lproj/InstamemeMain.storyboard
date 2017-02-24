@@ -45,14 +45,14 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-R9-JBr">
                                             <rect key="frame" x="8" y="8" width="80" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-4O-DCL">
                                             <rect key="frame" x="8" y="50" width="80" height="21"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -135,28 +135,53 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XfF-bi-f5n">
-                            <size key="itemSize" width="108" height="108"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="3" minimumInteritemSpacing="3" id="XfF-bi-f5n">
+                            <size key="itemSize" width="90" height="90"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="3" minY="3" maxX="3" maxY="3"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="MemesCollectionIdentifier" id="r6m-b6-v9g" customClass="InstamemeCollectionViewCell" customModule="Instameme" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
+                                <rect key="frame" x="3" y="3" width="90" height="90"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-5H-8c5">
-                                            <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-5H-8c5">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqR-0N-4w6" userLabel="Bottom Text">
+                                            <rect key="frame" x="0.0" y="61" width="90" height="21"/>
+                                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ezA-fk-qgx" userLabel="Top Text">
+                                            <rect key="frame" x="0.0" y="8" width="90" height="21"/>
+                                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="ezA-fk-qgx" firstAttribute="top" secondItem="r6m-b6-v9g" secondAttribute="topMargin" id="1Sn-L9-BJw"/>
+                                    <constraint firstAttribute="bottom" secondItem="xzn-5H-8c5" secondAttribute="bottom" id="7Eh-Qx-Wf1"/>
+                                    <constraint firstItem="ezA-fk-qgx" firstAttribute="leading" secondItem="tqR-0N-4w6" secondAttribute="leading" id="HHY-UM-DIH"/>
+                                    <constraint firstItem="ezA-fk-qgx" firstAttribute="leading" secondItem="xzn-5H-8c5" secondAttribute="leading" id="SOs-if-uqq"/>
+                                    <constraint firstItem="ezA-fk-qgx" firstAttribute="leading" secondItem="r6m-b6-v9g" secondAttribute="leading" id="Vx0-xj-omi"/>
+                                    <constraint firstItem="ezA-fk-qgx" firstAttribute="centerX" secondItem="xzn-5H-8c5" secondAttribute="centerX" id="a2h-eA-Uk0"/>
+                                    <constraint firstItem="xzn-5H-8c5" firstAttribute="top" secondItem="r6m-b6-v9g" secondAttribute="top" id="aoV-SR-1qz"/>
+                                    <constraint firstItem="tqR-0N-4w6" firstAttribute="centerX" secondItem="xzn-5H-8c5" secondAttribute="centerX" id="jvD-az-qV1"/>
+                                    <constraint firstAttribute="trailing" secondItem="ezA-fk-qgx" secondAttribute="trailing" id="pGa-bD-DDq"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="tqR-0N-4w6" secondAttribute="bottom" id="uRx-lr-ija"/>
+                                </constraints>
                                 <connections>
+                                    <outlet property="memeBottomText" destination="tqR-0N-4w6" id="MjO-AF-T6W"/>
                                     <outlet property="memeImage" destination="xzn-5H-8c5" id="8Cv-MD-ePr"/>
+                                    <outlet property="memeTopText" destination="ezA-fk-qgx" id="1h3-7F-2do"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -183,7 +208,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2do-nn-1FF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-833" y="997"/>
+            <point key="canvasLocation" x="-833.60000000000002" y="996.7016491754124"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iJO-fK-0g7">

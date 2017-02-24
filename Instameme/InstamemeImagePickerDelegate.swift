@@ -14,6 +14,7 @@ extension InstamemeViewController: UIImagePickerControllerDelegate, UINavigation
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             memeImageView.image = image
+            memeImage = image
             memeImageView.contentMode = .scaleAspectFit
             shouldShareButtonBeVisible = true
             shareButton.isEnabled = true

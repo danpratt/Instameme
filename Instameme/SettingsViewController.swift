@@ -94,6 +94,8 @@ class SettingsViewController: UIViewController {
         
         selectFontLabel.font = font!
         newSettings.font = font!
+        // Just in case something goes wrong, provide a backup font for display font (this should never happen)
+        newSettings.displayFont = UIFont(name: (font?.fontName) ?? Settings.Fonts.impact.rawValue, size: 17.0)!
     }
     
     // background color segment controls
@@ -130,9 +132,13 @@ class SettingsViewController: UIViewController {
         switch sender.tag {
         case 1:
             returnView.settings = newSettings
-            returnView.setupMemeView()
+            if returnView.meme != nil {
+                returnView.meme?.settings = newSettings
+            }
+            print(returnView.settings)
             dismiss(animated: true, completion: nil)
         default:
+            print("Didn't change anything")
             dismiss(animated: true, completion: nil)
         }
     }

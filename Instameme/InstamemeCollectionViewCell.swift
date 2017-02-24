@@ -13,5 +13,7 @@ class InstamemeCollectionViewCell: UICollectionViewCell {
     // MARK: IBOutlets
     
     @IBOutlet weak var memeImage: UIImageView!
+    @IBOutlet weak var memeTopText: UILabel!
+    @IBOutlet weak var memeBottomText: UILabel!
     
 }

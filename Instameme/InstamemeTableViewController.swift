@@ -50,13 +50,31 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
     
         // Setup cell using meme data
         
+        cell.memeImage.image = currentMeme.originalImage  // Using original image since we will be drawing over it
+        
+        // set labels to correct fonts
+        setFontFor(label: cell.memeTopText, settings: currentMeme.settings)
+        setFontFor(label: cell.memeBottomText, settings: currentMeme.settings)
+        cell.memeLabel.font = currentMeme.settings.displayFont
+        
+        // now populate the labels with text
         cell.memeLabel.text = "\(currentMeme.topText)...\(currentMeme.bottomText)"
-        cell.memeImage.image = currentMeme.originalImage
         cell.memeTopText.text = currentMeme.topText
         cell.memeBottomText.text = currentMeme.bottomText
 
         
         return cell
+    }
+    
+    // Setup font (could remove this feature, because view displays almost always look better with white font color)
+    func setFontFor(label: UILabel , settings: Settings) {
+        label.font = settings.displayFont
+        switch settings.fontShouldBeBlack {
+        case true:
+            label.textColor = .black
+        case false:
+            label.textColor = .white
+        }
     }
     
     // MARK: Swipe to delete

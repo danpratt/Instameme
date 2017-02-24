@@ -14,19 +14,6 @@ import UIKit
 // Using extension to prevent ViewController from getting too messy
 extension InstamemeViewController {
     
-    // Turn on notifications when the keyboard view will appear
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        subscribeToKeyboardNotifications()
-        
-    }
-    
-    // Turn off notifications when keyboard will disappear
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        unsubscribeFromKeyboardNotifications()
-    }
-    
     // Called when the keyboard is about to show up, moves view up so it isn't covered up by the keyboard
     func keyboardWillShow(_ notification: Notification) {
         if !isViewMovedUp && bottomTextField.isFirstResponder {

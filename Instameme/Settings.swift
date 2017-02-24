@@ -15,6 +15,7 @@ struct Settings {
     
     var fontSize: CGFloat = 40.0
     var font: UIFont = UIFont(name: Fonts.impact.rawValue, size: 40.0)!
+    var displayFont: UIFont = UIFont(name: Fonts.impact.rawValue, size: 17.0)!
     var fontShouldBeBlack = false
     
     var textAttributes: [String: Any] = [

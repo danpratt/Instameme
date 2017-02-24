@@ -47,11 +47,24 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
 
         // Disable the camera button if user doesn't have one
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
-
-        // Setup Memes by calling function
-        setupMemeView()
         
     }
+    
+    // Turn on notifications when the keyboard view will appear and setup the meme view
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
+        setupMemeView()
+        print(settings.backgroundColor)
+        print(settings.font.fontName)
+    }
+    
+    // Turn off notifications when keyboard will disappear
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        unsubscribeFromKeyboardNotifications()
+    }
+    
     
     // Setup Empty State
     func setupMemeView() {
@@ -212,6 +225,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // MARK: Prepare to view settings
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "OpenSettings" {
+            print("Opening settings")
             topText = topTextField.text ?? "TOP"
             bottomText = bottomTextField.text ?? "BOTTOM"
             memeImage = memeImageView.image
