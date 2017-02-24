@@ -45,22 +45,28 @@ class InstamemeTableViewController: UIViewController, UITableViewDelegate, UITab
     
     // Draws cell with image, and text from meme
      func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID)
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseID, for: indexPath) as! InstamemeTableViewCell
         let currentMeme = memes[(indexPath as NSIndexPath).row]
     
         // Setup cell using meme data
-        cell?.textLabel?.text = "\(currentMeme.topText)...\(currentMeme.bottomText)"
-        cell?.imageView?.image = currentMeme.memedImage
-        cell?.imageView?.contentMode = .scaleAspectFit
         
-        return cell!
+        cell.memeLabel.text = "\(currentMeme.topText)...\(currentMeme.bottomText)"
+        cell.memeImage.image = currentMeme.originalImage
+        cell.memeTopText.text = currentMeme.topText
+        cell.memeBottomText.text = currentMeme.bottomText
+
+        
+        return cell
     }
+    
+    // MARK: Swipe to delete
     
     // Enable actions on table
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
+    // Handle swipe actions on table
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == UITableViewCellEditingStyle.delete) {
             // handle delete by removing from local memes

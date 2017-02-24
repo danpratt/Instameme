@@ -24,7 +24,6 @@ class ViewMemeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         memeImage.image = meme?.memedImage
-        memeImage.contentMode = .scaleAspectFit
         tabBarController?.tabBar.isHidden = true
     }
     

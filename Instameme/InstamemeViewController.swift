@@ -56,6 +56,10 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     // Setup Empty State
     func setupMemeView() {
         
+        if meme != nil {
+            settings = (meme?.settings) ?? self.settings
+        }
+        
         // Do textfield prep work
         prepareAttributes()
         prepareTextField(textField: topTextField, containingText: topText)
@@ -172,12 +176,13 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
     func save(_ memedImage: UIImage) {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if meme == nil {
-            meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage)
+            meme = Meme(topText: topTextField.text!, bottomText: bottomTextField.text!, originalImage: memeImageView.image!, memedImage: memedImage, settings: settings)
         } else {
             meme?.topText = topTextField.text!
             meme?.bottomText = bottomTextField.text!
             meme?.originalImage = memeImageView.image!
             meme?.memedImage = memedImage
+            meme?.settings = settings
         }
         appDelegate.memes.append(meme!)
         

@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		652DCF961E58E28F006402E0 /* InstamemeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DCF951E58E28F006402E0 /* InstamemeCollectionViewCell.swift */; };
 		652DCF981E5CE295006402E0 /* ViewMemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652DCF971E5CE295006402E0 /* ViewMemeViewController.swift */; };
+		6576100F1E5FB157005F858B /* InstamemeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6576100E1E5FB157005F858B /* InstamemeTableViewCell.swift */; };
 		657DAAC91E4D067900B5F259 /* Impact.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 657DAAC71E4D04C100B5F259 /* Impact.ttf */; };
 		657DAACD1E4D0A7F00B5F259 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAACC1E4D0A7F00B5F259 /* SettingsViewController.swift */; };
 		657DAACF1E4D0BB000B5F259 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 657DAACE1E4D0BB000B5F259 /* Settings.swift */; };
@@ -48,6 +49,7 @@
 /* Begin PBXFileReference section */
 		652DCF951E58E28F006402E0 /* InstamemeCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstamemeCollectionViewCell.swift; sourceTree = "<group>"; };
 		652DCF971E5CE295006402E0 /* ViewMemeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewMemeViewController.swift; sourceTree = "<group>"; };
+		6576100E1E5FB157005F858B /* InstamemeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstamemeTableViewCell.swift; sourceTree = "<group>"; };
 		657DAAC71E4D04C100B5F259 /* Impact.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Impact.ttf; sourceTree = "<group>"; };
 		657DAACC1E4D0A7F00B5F259 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		657DAACE1E4D0BB000B5F259 /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 		65C914571E4AA6B000A11655 = {
 			isa = PBXGroup;
 			children = (
+				6576100E1E5FB157005F858B /* InstamemeTableViewCell.swift */,
 				652DCF971E5CE295006402E0 /* ViewMemeViewController.swift */,
 				65C914621E4AA6B000A11655 /* Instameme */,
 				65C914771E4AA6B000A11655 /* InstamemeTests */,
@@ -358,6 +361,7 @@
 				658B555B1E57A9FC00ECA6F4 /* InstamemeCollectionViewController.swift in Sources */,
 				65C914641E4AA6B000A11655 /* AppDelegate.swift in Sources */,
 				652DCF961E58E28F006402E0 /* InstamemeCollectionViewCell.swift in Sources */,
+				6576100F1E5FB157005F858B /* InstamemeTableViewCell.swift in Sources */,
 				65AB01761E4AC03C00C5BD71 /* KeyboardNotificationsExtension.swift in Sources */,
 				658B55591E57A9E300ECA6F4 /* InstamemeTableViewController.swift in Sources */,
 			);

@@ -19,35 +19,51 @@
         <scene sceneID="0c5-Uy-Fz8">
             <objects>
                 <tableViewController id="vDl-P8-BIj" userLabel="Table of Memes" customClass="InstamemeTableViewController" customModule="Instameme" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="56" sectionHeaderHeight="28" sectionFooterHeight="28" id="I3X-tW-D64">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="I3X-tW-D64">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableOfMemes" textLabel="eog-R6-lC0" style="IBUITableViewCellStyleDefault" id="4v1-cl-9js">
-                                <rect key="frame" x="0.0" y="28" width="375" height="56"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="tableOfMemes" rowHeight="80" id="g5K-TM-K4L" customClass="InstamemeTableViewCell" customModule="Instameme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4v1-cl-9js" id="dKI-xN-TmJ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="55.5"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="g5K-TM-K4L" id="qI4-r5-eCy">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="79"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eog-R6-lC0">
-                                            <rect key="frame" x="15" y="0.0" width="345" height="55.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <gestureRecognizers/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="0.0"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="prM-vn-e0R" userLabel="Meme Image">
+                                            <rect key="frame" x="8" y="0.0" width="80" height="80"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jh7-KN-NaG" userLabel="Meme Label">
+                                            <rect key="frame" x="96" y="21" width="271" height="36"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" name="Impact" family="Impact" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
-                                            <connections>
-                                                <outletCollection property="gestureRecognizers" destination="9aF-tn-r0b" appends="YES" id="0D1-4s-fcA"/>
-                                            </connections>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Top" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LG0-R9-JBr">
+                                            <rect key="frame" x="8" y="8" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bottom" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WSS-4O-DCL">
+                                            <rect key="frame" x="8" y="50" width="80" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
-                                    <gestureRecognizers/>
-                                    <connections>
-                                        <outletCollection property="gestureRecognizers" destination="9aF-tn-r0b" appends="YES" id="XI5-va-9UO"/>
-                                    </connections>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="memeBottomText" destination="WSS-4O-DCL" id="ebT-RI-hrk"/>
+                                    <outlet property="memeImage" destination="prM-vn-e0R" id="9f4-5j-Rdr"/>
+                                    <outlet property="memeLabel" destination="jh7-KN-NaG" id="xUO-gD-j8P"/>
+                                    <outlet property="memeTopText" destination="LG0-R9-JBr" id="2xc-bA-BuJ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -71,7 +87,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FDV-nu-21v" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <swipeGestureRecognizer direction="right" id="9aF-tn-r0b"/>
             </objects>
-            <point key="canvasLocation" x="-831" y="70"/>
+            <point key="canvasLocation" x="-831.20000000000005" y="69.715142428785612"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ggd-8l-EMq">
@@ -97,6 +113,8 @@
                 <navigationController id="6zp-sy-e74" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Table" image="collection" id="44F-Cx-eDb"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8qa-Fa-e1W">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -114,36 +132,29 @@
             <objects>
                 <collectionViewController id="uob-AZ-Ioj" userLabel="Collection of Memes" customClass="InstamemeCollectionViewController" customModule="Instameme" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Og4-wY-js9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XfF-bi-f5n">
-                            <size key="itemSize" width="150" height="150"/>
+                            <size key="itemSize" width="108" height="108"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MemesCollectionIdentifier" id="r6m-b6-v9g" customClass="InstamemeCollectionViewCell" customModule="Instameme" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" reuseIdentifier="MemesCollectionIdentifier" id="r6m-b6-v9g" customClass="InstamemeCollectionViewCell" customModule="Instameme" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-5H-8c5">
-                                            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="150" id="UbA-vl-jUr"/>
-                                                <constraint firstAttribute="height" constant="150" id="oSG-ao-u74"/>
-                                            </constraints>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzn-5H-8c5">
+                                            <rect key="frame" x="0.0" y="0.0" width="108" height="108"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                     </subviews>
                                 </view>
-                                <constraints>
-                                    <constraint firstItem="xzn-5H-8c5" firstAttribute="centerX" secondItem="r6m-b6-v9g" secondAttribute="centerX" id="WoF-1I-3Lv"/>
-                                    <constraint firstItem="xzn-5H-8c5" firstAttribute="centerY" secondItem="r6m-b6-v9g" secondAttribute="centerY" id="qbQ-2f-7IA"/>
-                                </constraints>
                                 <connections>
                                     <outlet property="memeImage" destination="xzn-5H-8c5" id="8Cv-MD-ePr"/>
                                 </connections>
@@ -163,6 +174,8 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <connections>
                         <outlet property="instamemeFlowLayout" destination="XfF-bi-f5n" id="Q4I-Kq-6Po"/>
                         <outlet property="memeCollectionView" destination="Og4-wY-js9" id="B02-bq-1KU"/>
@@ -170,7 +183,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2do-nn-1FF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-831.88405797101461" y="997.82608695652186"/>
+            <point key="canvasLocation" x="-833" y="997"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iJO-fK-0g7">
@@ -178,6 +191,8 @@
                 <navigationController id="Znl-mL-5eP" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="table" id="MJN-sC-DSS"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="uMb-Hl-T07">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -194,6 +209,8 @@
         <scene sceneID="lvj-6u-IKF">
             <objects>
                 <navigationController storyboardIdentifier="MemeViewerNC" id="bgn-gF-VUb" sceneMemberID="viewController">
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="320" height="480"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="jFY-16-xBp">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -209,17 +226,17 @@
         <!--Meme Viewer-->
         <scene sceneID="GcK-vZ-pu8">
             <objects>
-                <viewController storyboardIdentifier="MemeViewer" id="md9-ac-a21" userLabel="Meme Viewer" customClass="ViewMemeViewController" customModule="Instameme" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemeViewer" title="MemeViewer" id="md9-ac-a21" userLabel="Meme Viewer" customClass="ViewMemeViewController" customModule="Instameme" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fSJ-Gu-23Q"/>
                         <viewControllerLayoutGuide type="bottom" id="h4h-Ml-mBb"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8BJ-l3-N9a">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wJ4-eq-GDH" userLabel="MemedImage">
-                                <rect key="frame" x="-4" y="64" width="383" height="603"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="416"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

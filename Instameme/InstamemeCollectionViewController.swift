@@ -25,7 +25,10 @@ class InstamemeCollectionViewController: UICollectionViewController {
         memes = appDelegate.memes
         
         // Setup flow layout
-        setupFlowLayout()
+        didRotate(self)
+        
+        // Check for rotation
+        NotificationCenter.default.addObserver(self, selector: #selector(didRotate(_:)), name: NSNotification.Name.UIDeviceOrientationDidChange, object: nil)
     }
 
     //  Refresh collection when we get back to it from editing
@@ -37,15 +40,28 @@ class InstamemeCollectionViewController: UICollectionViewController {
         tabBarController?.tabBar.isHidden = false
     }
     
-    // MARK: Functions
+    // MARK: Layout Functions
     
-    func setupFlowLayout() {
-        let space:CGFloat = 8.0
-        let dimension = (view.frame.size.width - (2 * space)) / 3.0
+    // Does setup
+    func setupFlowLayout(_ size: CGSize) {
+//        let space: CGFloat = 1.0
+//        var memesInRow: CGFloat = 3
+//        // check which way device is rotated
+//        if size.width > size.height {
+//            memesInRow = 5
+//        }
         
-        instamemeFlowLayout.minimumInteritemSpacing = space
-        instamemeFlowLayout.minimumLineSpacing = space
-        instamemeFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
+//        let dimension = size.width / memesInRow
+        
+//        instamemeFlowLayout.minimumInteritemSpacing = space
+//        instamemeFlowLayout.minimumLineSpacing = space
+        
+//        instamemeFlowLayout.itemSize = CGSize(width: dimension, height: dimension)
+    }
+    
+    // Get new screen size and update flowLayout when the screen rotates
+    func didRotate(_: Any) {
+        setupFlowLayout(view.frame.size)
     }
     
     // MARK: Required Functions for Collection Views
@@ -62,8 +78,7 @@ class InstamemeCollectionViewController: UICollectionViewController {
         let meme = memes[indexPath.row]
         
         // Update cell properties
-        cell.memeImage.image = meme.memedImage
-        cell.memeImage.contentMode = .scaleAspectFit
+        cell.memeImage.image = meme.originalImage
         
         return cell
     }
