@@ -27,4 +27,4 @@ This app was written while I was an even bigger newbie than I am now.  The entir
 5. Submit a pull request :D
 
 ## License
-[MIT License](Tip-Calculator/LICENSE.txt)
+[MIT License](LICENSE.md)
