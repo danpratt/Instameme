@@ -101,6 +101,12 @@
       "idiom" : "ipad",
       "filename" : "Instameme-App-IconiPadProApp_83.5pt@2x.png",
       "scale" : "2x"
+    },
+    {
+      "size" : "1024x1024",
+      "idiom" : "ios-marketing",
+      "filename" : "Instameme-App-Icon.png",
+      "scale" : "1x"
     }
   ],
   "info" : {

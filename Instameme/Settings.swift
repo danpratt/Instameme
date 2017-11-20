@@ -19,29 +19,29 @@ struct Settings {
     var fontShouldBeBlack = false
     
     var textAttributes: [String: Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSStrokeWidthAttributeName: -3.0,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.strokeWidth.rawValue: -3.0,
         ]
     
     var backgroundColor = blueColor
     
     var blackTextAttributes: [String: Any] = [
-        NSStrokeColorAttributeName: UIColor.white,
-        NSForegroundColorAttributeName: UIColor.black,
-        NSStrokeWidthAttributeName: -3.0,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.white,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.black,
+        NSAttributedStringKey.strokeWidth.rawValue: -3.0,
     ]
     
     var funTextAttributesWhite: [String: Any] = [
-        NSStrokeColorAttributeName: UIColor.white,
-        NSForegroundColorAttributeName: UIColor.white,
-        NSStrokeWidthAttributeName: 0.0,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.white,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.white,
+        NSAttributedStringKey.strokeWidth.rawValue: 0.0,
         ]
     
     var funTextAttributesBlack: [String: Any] = [
-        NSStrokeColorAttributeName: UIColor.black,
-        NSForegroundColorAttributeName: UIColor.black,
-        NSStrokeWidthAttributeName: 0.0,
+        NSAttributedStringKey.strokeColor.rawValue: UIColor.black,
+        NSAttributedStringKey.foregroundColor.rawValue: UIColor.black,
+        NSAttributedStringKey.strokeWidth.rawValue: 0.0,
         ]
     
     // Fonts

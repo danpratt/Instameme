@@ -70,7 +70,7 @@ class InstamemeCollectionViewController: UICollectionViewController {
     }
     
     // Get new screen size and update flowLayout when the screen rotates
-    func didRotate(_: Any) {
+    @objc func didRotate(_: Any) {
         setupFlowLayout(view.frame.size)
     }
     
