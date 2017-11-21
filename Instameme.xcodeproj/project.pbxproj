@@ -100,6 +100,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6501EE551FC4859C00E62CD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		657DAAC81E4D065A00B5F259 /* Custom Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,14 +146,15 @@
 			name = "Delegates and Extensions";
 			sourceTree = "<group>";
 		};
-		65AB017C1E4ACC4A00C5BD71 /* Views and Conrollers */ = {
+		65AB017C1E4ACC4A00C5BD71 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				6576100E1E5FB157005F858B /* InstamemeTableViewCell.swift */,
+				652DCF971E5CE295006402E0 /* ViewMemeViewController.swift */,
 				658B555C1E57AA0A00ECA6F4 /* Creating Memes */,
-				65C914671E4AA6B000A11655 /* InstamemeMain.storyboard */,
 				658B555D1E57AA1500ECA6F4 /* Viewing Memes */,
 			);
-			name = "Views and Conrollers";
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		65AB017D1E4ACC5400C5BD71 /* Model */ = {
@@ -160,8 +169,7 @@
 		65C914571E4AA6B000A11655 = {
 			isa = PBXGroup;
 			children = (
-				6576100E1E5FB157005F858B /* InstamemeTableViewCell.swift */,
-				652DCF971E5CE295006402E0 /* ViewMemeViewController.swift */,
+				6501EE551FC4859C00E62CD5 /* View */,
 				65C914621E4AA6B000A11655 /* Instameme */,
 				65C914771E4AA6B000A11655 /* InstamemeTests */,
 				65C914821E4AA6B000A11655 /* InstamemeUITests */,
@@ -183,7 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				65C914631E4AA6B000A11655 /* AppDelegate.swift */,
-				65AB017C1E4ACC4A00C5BD71 /* Views and Conrollers */,
+				65AB017C1E4ACC4A00C5BD71 /* Controllers */,
 				65AB017B1E4ACC3700C5BD71 /* Delegates and Extensions */,
 				65AB017D1E4ACC5400C5BD71 /* Model */,
 				65C9146A1E4AA6B000A11655 /* Assets.xcassets */,
