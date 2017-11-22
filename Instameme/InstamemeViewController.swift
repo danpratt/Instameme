@@ -138,6 +138,7 @@ class InstamemeViewController: UIViewController, UITextFieldDelegate {
         
         // only save the meme if the user performs some action, does not save if activityViewController is cancelled
         activityViewController.completionWithItemsHandler = {(activity, completed, items, error) in
+            print("Going to save")
             if (completed) {
                 let _ = self.save(generatedMemeImage)
             }
